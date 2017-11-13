@@ -1,0 +1,10 @@
+the 0 random number = 4
+the 1 random number = 5
+the 2 random number = 1
+the 3 random number = 10
+the 4 random number = 4
+the 5 random number = 3
+the 6 random number = 3
+the 7 random number = 8
+the 8 random number = 8
+the 9 random number = 6
