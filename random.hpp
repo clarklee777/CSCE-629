@@ -1,1 +1,0 @@
-/* Header file to declare functions for random generate graph */
