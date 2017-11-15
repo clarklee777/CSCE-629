@@ -1,5 +1,5 @@
 /* Using linked list for random generating graphs */
-#include "linkgraph.hpp"
+#include "linkgraph2.hpp"
 
 #define TOTAL_VERTICES 5000
 list * linked_list[TOTAL_VERTICES];
