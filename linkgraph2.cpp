@@ -1,6 +1,6 @@
 /* Using linked list for random generating graphs */
 /* Graph2 : each vertex is adjacent to 20% of other vertices (Degree = 500) */
-#include "linkgraph2.hpp"
+#include "linkgraph.hpp"
 
 #define TOTAL_VERTICES 5000
 list * linked_list[TOTAL_VERTICES];
@@ -25,23 +25,26 @@ int main()
         {
             linked_list[i] = new list();
             linked_list[i]->newvertex(i+1);
-            fprintf(fp, "%d %d\n", i, i+1);
-            //edge_count++;
+            random = rand()%9999 +1;
+            fprintf(fp, "%d %d %d\n", i, i+1, random);
+            edge_count++;
         }
         else if(i<(TOTAL_VERTICES-1))
         {
             linked_list[i] = new list();
             linked_list[i]->newvertex(i+1);
             linked_list[i]->newvertex(i-1);
-            fprintf(fp, "%d %d\n", i, i+1);
+            random = rand()%9999 +1;
+            fprintf(fp, "%d %d %d\n", i, i+1, random);
             edge_count++;
         }
         else
         {
             linked_list[i] = new list();
             linked_list[i]->newvertex(i-1);
-            fprintf(fp, "%d %d\n", i, i+1);
-            edge_count++;
+            //random = rand()%9999 +1;
+            //fprintf(fp, "%d %d %d\n", i, i+1, random);
+            //edge_count++;
         }
     }
     printf("Connected edges uses %d.\n", edge_count);
@@ -56,7 +59,8 @@ int main()
                 {
                     linked_list[j]->newvertex(k);
                     linked_list[k]->newvertex(j);
-                    fprintf(fp, "%d %d\n", j, k);
+                    random = rand()%9999 +1;
+                    fprintf(fp, "%d %d %d\n", j, k, random);
                     edge_count++;
                 }
             }
