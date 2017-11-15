@@ -1,4 +1,5 @@
 /* Using linked list for random generating graphs */
+/* Graph2 : each vertex is adjacent to 20% of other vertices (Degree = 500) */
 #include "linkgraph2.hpp"
 
 #define TOTAL_VERTICES 5000
@@ -49,7 +50,7 @@ int main()
         for(k=0; k<TOTAL_VERTICES; k++)
         {
             random = rand()%9999 +1;
-            if(random<7)
+            if(random<1055)
             {
                 if((linked_list[j]->find_edge(k)==0)/*&&(linked_list[k]->find_edge(j)==0)*/&&(j!=k))
                 {
@@ -61,13 +62,13 @@ int main()
             }
         }
     }
-    
+    /*
     for(l=0; l<TOTAL_VERTICES; l++)
     {
         printf("The %dth linked list :\n", l);
         linked_list[l]->display();
     }
-    
+    */
     printf("Total %d edges.\n", edge_count);
     //free(vertex);
     fclose(fp);

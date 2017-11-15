@@ -1,4 +1,5 @@
 /* Using linked list for random generating graphs */
+/* Graph1 : have average vertex degree = 8, E = 4N */
 #include "linkgraph1.hpp"
 
 #define TOTAL_VERTICES 5000
