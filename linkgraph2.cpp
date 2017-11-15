@@ -14,7 +14,7 @@ int main()
     //vertex = (struct vertices *)malloc(sizeof(struct vertices)*TOTAL_VERTICES);
     
     FILE *fp;
-    fp = fopen("graph1.txt", "w");
+    fp = fopen("graph2.txt", "w");
     srand(time(NULL));              //start the random seed
     
     /* Initialize the linked list array and the whole graph connected first */
