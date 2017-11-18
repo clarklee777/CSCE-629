@@ -148,3 +148,8 @@ void change_size(int _size)
     h_size = _size;
 }
 
+int main()
+{
+    printf("Not ready for testing yet.\n")
+    return 0;
+}
