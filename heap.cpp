@@ -84,10 +84,55 @@ void Delete(int _vertice)
 void heapify(int bug)
 {
     /* Bug is the vertex's index in the heap structure, not the vertex number */
-    /* When the bug is  */
+    /* When the bug is larger than its parent node : push up swap */
     if((bug>1)&&(D[bug]>D[bug/2]))
     {
+        int temp = bug;
         
+        /* Keeping swapping while the bug is still larger than its parent node */
+        while ((temp>1)&&(D[temp]>D[temp/2]))
+        {
+            int h_temp = H[temp];
+            int d_temp = D[temp];
+            
+            H[temp] = H[temp/2];
+            D[temp] = D[temp/2];
+            
+            H[temp/2] = h_temp;
+            D[temp/2] = d_temp;
+            
+            temp = temp/2;
+        }
+    }
+    
+    /* When the bug's child is larger than the bug : push down swap */
+    else if ((bug<=(h_size/2))&&((D[bug]>D[bug*2])||(D[bug]>D[bug*2 + 1])))
+    {
+        int temp = bug;
+        
+        /* Keeping swapping while the bug's child is still larger than itself */
+        while ((temp<=(h_size/2))&&((D[temp]>D[temp*2])||(D[temp]>D[temp*2 + 1])))
+        {
+            int child_for_swap = temp*2;
+            int min_value = D[temp*2];
+            
+            if(min_value>D[temp*2 + 1])
+            {
+                min_value = D[temp*2 + 1];
+                child_for_swap = temp*2 + 1;
+            }
+            
+            int h_temp = H[temp];
+            int d_temp = D[temp];
+            
+            H[temp] = H[child_for_swap];
+            D[temp] = D[child_for_swap];
+            
+            H[child_for_swap] = h_temp;
+            D[child_for_swap] = d_temp;
+            
+            temp = child_for_swap;
+        }
     }
 }
 
