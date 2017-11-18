@@ -2,7 +2,7 @@
 
 heap::heap()
 {
-    int i;
+    int i = 0;
     while (i!=TOTAL_VERTICES)
     {
         H[i] = 0;
@@ -13,14 +13,14 @@ heap::heap()
 }
 
 /* Find the maximum item in the max-heap */
-int max_weight()
+int heap::max_weight()
 {
     int w_max = D[1];
     return w_max;
 }
 
 /* Returns the node of maximum value from a max heap */
-int max_vertex()
+int heap::max_vertex()
 {
     int vertex_num = H[1];
     delete_max();
@@ -28,7 +28,7 @@ int max_vertex()
 }
 
 /* Remove the root node of a max heap */
-void delete_max()
+void heap::delete_max()
 {
     int size = h_size;
     H[1] = H[size];
@@ -41,7 +41,7 @@ void delete_max()
 }
 
 /* Add a new node to the max-heap */
-void Insert(int _vertice, int _weight)
+void heap::Insert(int _vertice, int _weight)
 {
     int size = h_size;
     
@@ -56,10 +56,10 @@ void Insert(int _vertice, int _weight)
 }
 
 /* Delete a node from the max-heap */
-void Delete(int _vertice)
+void heap::Delete(int _vertice)
 {
     int size = h_size;
-    int index;
+    int index = 0;
     
     for (int i = 1; i<= TOTAL_VERTICES; i++)
     {
@@ -70,8 +70,8 @@ void Delete(int _vertice)
         }
     }
     
-    H[i] = H[size];
-    D[i] = D[size];
+    H[index] = H[size];
+    D[index] = D[size];
     
     size = size - 1;
     change_size(size);
@@ -81,7 +81,7 @@ void Delete(int _vertice)
 }
 
 /* Rearrange the heap for violation of the heap roperty */
-void heapify(int bug)
+void heap::heapify(int bug)
 {
     /* Bug is the vertex's index in the heap structure, not the vertex number */
     /* When the bug is larger than its parent node : push up swap */
@@ -137,19 +137,19 @@ void heapify(int bug)
 }
 
 /* Return the current heap size */
-int heap_size()
+int heap::heap_size()
 {
     return h_size;
 }
 
 /* Change the private variable : size of the heap structure*/
-void change_size(int _size)
+void heap::change_size(int _size)
 {
     h_size = _size;
 }
 
 int main()
 {
-    printf("Not ready for testing yet.\n")
+    printf("Not ready for testing yet.\n");
     return 0;
 }
