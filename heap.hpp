@@ -3,13 +3,13 @@
 #include <stdio.h>
 
 #define TOTAL_VERTICES 100
-/*
-struct edge{
+
+/*struct edge{
     int u, v;
     int weight;
 
-};
-*/
+};*/
+
 class heap{
     
 private:

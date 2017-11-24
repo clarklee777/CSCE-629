@@ -7,7 +7,7 @@
 struct vertices{
     vertices *next; //pointed to the next vertex in the linked list
     int v_num;      //the vertex number
-    //int weight;
+    int weight;
 };
 
 class list{

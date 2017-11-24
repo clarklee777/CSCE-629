@@ -106,19 +106,19 @@ void heap::heapify(int bug)
     }
     
     /* When the bug's child is larger than the bug : push down swap */
-    else if ((bug<=(h_size/2))&&((D[bug]>D[bug*2])||(D[bug]>D[bug*2 + 1])))
+    else if ((bug<=(h_size/2))&&((D[bug]<D[bug*2])||(D[bug]<D[bug*2 + 1])))
     {
         int temp = bug;
         
         /* Keeping swapping while the bug's child is still larger than itself */
-        while ((temp<=(h_size/2))&&((D[temp]>D[temp*2])||(D[temp]>D[temp*2 + 1])))
+        while ((temp<=(h_size/2))&&((D[temp]<D[temp*2])||(D[temp]<D[temp*2 + 1])))
         {
             int child_for_swap = temp*2;
-            int min_value = D[temp*2];
+            int max_value = D[temp*2];
             
-            if(min_value>D[temp*2 + 1])
+            if(max_value<D[temp*2 + 1])
             {
-                min_value = D[temp*2 + 1];
+                max_value = D[temp*2 + 1];
                 child_for_swap = temp*2 + 1;
             }
             
@@ -150,6 +150,13 @@ void heap::change_size(int _size)
 
 int main()
 {
-    printf("Not ready for testing yet.\n");
+    heap * the_heap;
+    FILE *fp;
+    fp = fopen("testgraph.txt", "r");
+    
+    //fscanf
+    //printf("Not ready for testing yet.\n");
+    
+    fclose(fp);
     return 0;
 }
