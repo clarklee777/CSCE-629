@@ -65,7 +65,7 @@ public:
         temp=head;
         while(temp!=NULL)
         {
-            printf("%d\t", temp->v_num);
+            printf("%d (%d)\t", temp->v_num, temp->weight);
             temp=temp->next;
         }
         printf("\n");

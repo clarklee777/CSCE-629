@@ -1,10 +1,11 @@
 /* The implementation of Dijsktra Algorithm without using heap structure for fringes */
 #include <stdio.h>
 #include <stdlib.h>
-#include "link_list.hpp"
+#include <string.h>
+#include "linked_list.hpp"
 
-#ifndef
-#define TOTAL_VERTICES 5000
+#ifndef TOTAL_VERTICES
+#define TOTAL_VERTICES 15
 #endif
 list * edge_list[TOTAL_VERTICES];
 
@@ -15,11 +16,10 @@ struct vertex{
     int color; // color : 1 = white / 2 = grey / 3 = black
 };
 
-int main(argc, argv[])
+int main(int argc, char *argv[])
 {
     FILE *fp;
     fp = fopen(argv[1], "r");
-    test_heap = new heap();
     
     if(!fp)
     {
@@ -32,7 +32,7 @@ int main(argc, argv[])
     else
     {
         int flag = 0;
-        while(flag ==0)
+        while(flag == 0)
         {
             int v1, v2, w, edge;
             fscanf(fp,"%d %d %d", &v1, &v2, &w);
@@ -43,18 +43,25 @@ int main(argc, argv[])
             }
             else
             {
-                edge_list[i] = new list();
-                edge_list[i]->newvertex(i+1);
-                edge_list[i]->newvertex(i-1);
-                random = rand()%9999 +1;
-                fprintf(fp, "%d %d %d\n", i, i+1, random);
-                edge_count++;
                 /* Make the edge name XX_YY, XX is the small vertex number while YY is larger */
-                if(v1<v2) edge = v1*100 + v2;
-                else edge = v2*100 + v1;
+                //if(v1<v2) edge = v1*100 + v2;
+                //else edge = v2*100 + v1;
                 
+                if(edge_list[v1] == NULL) edge_list[v1] = new list();
+                if(edge_list[v2] == NULL) edge_list[v2] = new list();
+                edge_list[v1]->newvertex(v2,w);
+                edge_list[v2]->newvertex(v1,w);
             }
             
         }
     }
+    
+    for(int l=0; l<TOTAL_VERTICES; l++)
+    {
+        printf("The %dth linked list :\n", l);
+        edge_list[l]->display();
+    }
+    
+    fclose(fp);
+    return 0;
 }
