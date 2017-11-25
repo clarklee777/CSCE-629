@@ -65,7 +65,8 @@ public:
         temp=head;
         while(temp!=NULL)
         {
-            printf("%d (%d)\t", temp->v_num, temp->weight);
+            printf("%d \t", temp->v_num); //print only connected vertex
+            //printf("%d (%d)\t", temp->v_num, temp->weight); //also print edge's weight
             temp=temp->next;
         }
         printf("\n");

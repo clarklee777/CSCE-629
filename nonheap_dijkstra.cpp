@@ -1,23 +1,62 @@
 /* The implementation of Dijsktra Algorithm without using heap structure for fringes */
+//---------------------------------------------------
+//            **** INCLUDES ****
+//---------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "linked_list.hpp"
+//----------------------------------------------------
+//            **** DEFINES ****
+//----------------------------------------------------
 
 #ifndef TOTAL_VERTICES
-#define TOTAL_VERTICES 15
+#define TOTAL_VERTICES 5000
 #endif
+#define INFINTE 99999999
+
+//-----------------------------------------------------
+//          **** DATA STRUCTURES ****
+//-----------------------------------------------------
+
 list * edge_list[TOTAL_VERTICES];
 
 /* Vertex struct for the graph */
 struct vertex{
-    int v_num;
+    int vnum;
     int label;
     int color; // color : 1 = white / 2 = grey / 3 = black
 };
 
+vertex V[TOTAL_VERTICES];
+
+//-----------------------------------------------------
+//-----------------------------------------------------
+
+void print_linked_list(int _edge_count)
+{
+    for(int l=0; l<TOTAL_VERTICES; l++)
+    {
+        printf("The %dth linked list :\n", l);
+        edge_list[l]->display();
+    }
+    printf("Total %d edges.\n", _edge_count);
+}
+
+void initialize_graph()
+{
+    /* Initialize the graph vertices : label = infinite, color = 1 (white) */
+    for(int i=1; i<=TOTAL_VERTICES; i++)
+    {
+        V[i].vnum = i;
+        V[i].label = INFINTE;
+        V[i].color = 1;
+    }
+    
+}
 int main(int argc, char *argv[])
 {
+    int edge_count = 0;
     FILE *fp;
     fp = fopen(argv[1], "r");
     
@@ -51,16 +90,13 @@ int main(int argc, char *argv[])
                 if(edge_list[v2] == NULL) edge_list[v2] = new list();
                 edge_list[v1]->newvertex(v2,w);
                 edge_list[v2]->newvertex(v1,w);
+                edge_count++;
             }
             
         }
     }
+    print_linked_list(edge_count);
     
-    for(int l=0; l<TOTAL_VERTICES; l++)
-    {
-        printf("The %dth linked list :\n", l);
-        edge_list[l]->display();
-    }
     
     fclose(fp);
     return 0;
