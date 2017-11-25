@@ -2,19 +2,18 @@
 // Heap functions are :
 // heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)
 // Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size)
-int main(/*int argc, char *argv[]*/)
+int main(int argc, char *argv[])
 {
     heap * test_heap;
     FILE *fp;
-    //fp = fopen("argv[1]", "r");
-    fp = fopen("testgraph.txt", "r");
+    fp = fopen(argv[1], "r");
     test_heap = new heap();
     
     if(!fp)
     {
-        //if(argv[2]) printf("Error 01 : file: %s not found\n",argv[2]);
+        if(argv[2]) printf("Error 01 : file: %s not found\n",argv[2]);
         printf("Error 02 : file open failed.\n");
-        //printf("file: %s not found\n",argv[1]);
+        printf("file: %s not found\n",argv[1]);
         printf("proper usage: ./program_name input_filename\nPlease try again...\n\n");
         exit(0);
     }
@@ -42,7 +41,6 @@ int main(/*int argc, char *argv[]*/)
             
         }
      }
-    //int i = 1;
     while(test_heap->heap_size()!=0)
     {
         int vertex, weight;
