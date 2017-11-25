@@ -44,14 +44,14 @@ int main(int argc, char *argv[])
     while(test_heap->heap_size()!=0)
     {
         int vertex, weight;
+        int v1, v2;
         
         weight = test_heap->max_weight();
         vertex = test_heap->max_vertex();
-        //if (i==1)
-        //{
-            printf("edge = %d, weight = %d\n", vertex, weight);
-            //i = i+1;
-        //}
+        v1 = vertex/100;
+        v2 = vertex%100;
+        printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);
+
     }
     
     fclose(fp);
