@@ -1,4 +1,10 @@
+// Create by : Ho Lee
+// Date      : 2017/11/25
+
 /* The header file for declaration of max-heap class */
+// Heap functions are :
+// heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)
+// Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size)
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -16,10 +22,14 @@ private:
     int H[TOTAL_VERTICES]; //heap array
     int D[TOTAL_VERTICES]; //data array
     int h_size;            // Returns number of elements in the heap
-    void change_size(int _size); // Change the private variable : size of the heap structure
+    void change_size(int _size)  // Change the private variable : size of the heap structure
+    {
+        h_size = _size;
+    }
     
 public:
-    heap::heap()
+    /* Class initializer */
+    heap()
     {
         int i = 0;
         while (i!=TOTAL_VERTICES)
@@ -32,14 +42,14 @@ public:
     }
     
     /* Find the maximum item in the max-heap */
-    int heap::max_weight()
+    int max_weight()
     {
         int w_max = D[1];
         return w_max;
     }
     
     /* Returns the node of maximum value from a max heap */
-    int heap::max_vertex()
+    int max_vertex()
     {
         int vertex_num = H[1];
         delete_max();
@@ -47,7 +57,7 @@ public:
     }
     
     /* Remove the root node of a max heap */
-    void heap::delete_max()
+    void delete_max()
     {
         int size = h_size;
         H[1] = H[size];
@@ -60,7 +70,7 @@ public:
     }
     
     /* Add a new node to the max-heap */
-    void heap::Insert(int _vertice, int _weight)
+    void Insert(int _vertice, int _weight)
     {
         int size = h_size;
         
@@ -75,7 +85,7 @@ public:
     }
     
     /* Delete a node from the max-heap */
-    void heap::Delete(int _vertice)
+    void Delete(int _vertice)
     {
         int size = h_size;
         int index = 0;
@@ -100,7 +110,7 @@ public:
     }
     
     /* Rearrange the heap for violation of the heap roperty */
-    void heap::heapify(int bug)
+    void heapify(int bug)
     {
         /* Bug is the vertex's index in the heap structure, not the vertex number */
         /* When the bug is larger than its parent node : push up swap */
@@ -156,15 +166,9 @@ public:
     }
     
     /* Return the current heap size */
-    int heap::heap_size()
+    int heap_size()
     {
         return h_size;
     }
-    
-    /* Change the private variable : size of the heap structure*/
-    void heap::change_size(int _size)
-    {
-        h_size = _size;
-    }
-    
+
 };
