@@ -66,7 +66,12 @@ int main()
             }
         }
     }
-    fprintf(fp, "%d %d %d\n", 0, 0, 0); //for further file reading convenience
+    
+    /*for further file reading convenience */
+    int zero = 0;
+    fprintf(fp, "%d %d %d\n", zero, zero, zero);
+    
+    /* Print out edges (linked list) */
     /*
     for(l=0; l<TOTAL_VERTICES; l++)
     {
