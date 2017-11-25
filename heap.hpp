@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define TOTAL_VERTICES 100
+#define TOTAL_VERTICES 10000000
 
 /*struct edge{
     int u, v;

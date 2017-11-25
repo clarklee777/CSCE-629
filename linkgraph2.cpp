@@ -66,6 +66,7 @@ int main()
             }
         }
     }
+    fprintf(fp, "%d %d %d\n", 0, 0, 0); //for further file reading convenience
     /*
     for(l=0; l<TOTAL_VERTICES; l++)
     {

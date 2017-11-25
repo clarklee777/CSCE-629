@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
             {
                 
                 /* Make the edge name XX_YY, XX is the small vertex number while YY is larger */
-                if(v1<v2) edge = v1*100 + v2;
-                else edge = v2*100 + v1;
+                if(v1<v2) edge = v1*10000 + v2;
+                else edge = v2*10000 + v1;
                 test_heap->Insert(edge, w);
                 
             }
@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
         
         weight = test_heap->max_weight();
         vertex = test_heap->max_vertex();
-        v1 = vertex/100;
-        v2 = vertex%100;
+        v1 = vertex/10000;
+        v2 = vertex%10000;
         printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);
 
     }
