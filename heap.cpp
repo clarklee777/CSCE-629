@@ -43,11 +43,13 @@ int main(int argc, char *argv[])
      }
     while(test_heap->heap_size()!=0)
     {
+        EDGE temp = test_heap->extract_max();
         int vertex, weight;
         int v1, v2;
         
-        weight = test_heap->max_weight();
-        vertex = test_heap->max_vertex();
+        weight = temp.edge_weight;
+        vertex = temp.edge_num;
+        
         v1 = vertex/10000;
         v2 = vertex%10000;
         printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);

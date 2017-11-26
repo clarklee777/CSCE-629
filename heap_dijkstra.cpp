@@ -1,3 +1,4 @@
+/* Dijkstra's Algorithm using heap structure to store fringe queue to solve max-bandwidth path */
 /* The implementation of Dijsktra Algorithm without using heap structure for fringes */
 //---------------------------------------------------
 //            **** INCLUDES ****
@@ -7,6 +8,12 @@
 #include <iostream>
 #include <time.h>
 #include "linked_list.hpp"
+#include "heap.hpp"
+
+/* Heap functions are :                                                     */
+/* heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)   */
+/* Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size) */
+
 //----------------------------------------------------
 //--------------**** DEFINES ****---------------------
 //----------------------------------------------------
@@ -16,23 +23,22 @@
 #endif
 #define INFINTE 10000
 
-//using namespace std;
 //-----------------------------------------------------
 //----------**** DATA STRUCTURES ****------------------
 //-----------------------------------------------------
 
 list * edge_list[TOTAL_VERTICES+1];
-list * fringe = new list();
+heap * fringe = new heap();
+//list * fringe = new list();
 
 int status[TOTAL_VERTICES]; // status : 1 = unseen / 2 = fringe / 3 = in-tree
 int labels[TOTAL_VERTICES];
 int parent[TOTAL_VERTICES];
 
-
 //-----------------------------------------------------
 //---------------**** FUNCTIONS ****-------------------
 //-----------------------------------------------------
-
+/* Function to print all linked list represent each node's adjacency nodes */
 void print_linked_list(int _edge_count)
 {
     for(int l=0; l<TOTAL_VERTICES; l++)
@@ -46,6 +52,16 @@ void print_linked_list(int _edge_count)
     printf("Total %d edges.\n", _edge_count);
 }
 
+/* Make the edge name XX_YY, XX is the small vertex number while YY is larger */
+int name_edge(int v1, int v2)
+{
+    int edge_num;
+    
+    if(v1<v2) edge_num = v1*10000 + v2;
+    else edge_num = v2*10000 + v1;
+    
+    return edge_num;
+}
 void initialize_graph(int _source)
 {
     /* Initialize the graph vertices : label = infinite, status = 1 (unseen) */
@@ -62,6 +78,7 @@ void initialize_graph(int _source)
     /* Create a fringe list by first examine source node's neighbor nodes */
     vertices *temp;
     temp = edge_list[_source]->list_head();
+    int edge;
     while(temp!=NULL)
     {
         int currentv= temp->v_num;
@@ -69,21 +86,21 @@ void initialize_graph(int _source)
         labels[currentv] = temp->weight;
         parent[currentv] = _source;
         
-        fringe->newvertex(currentv, temp->weight);
+        //fringe->newvertex(currentv, temp->weight);
+        //edge = name_edge(_source,currentv);
+        fringe->Insert(currentv,temp->weight);
         temp = temp->next;
     }
 }
-
+/* Doesn't need list since we utilizes heap structure for extracting max fringe
 int max_label_fringe()
 {
-    //printf("In finding max fringe...\n");
     int max = 0;
     int max_node = 0;
-    //int fringe_count = 0;
-    //int backup_count = 0;
-    //bool next_fringe_list = 0;
+
     vertices *temp = fringe->list_head();
-    /* Transverse throught the linked list to find the max label fringe, then extract it */
+    
+    // Transverse throught the linked list to find the max label fringe, then extract it
     while(temp!=NULL)
     {
         //printf("In looping01...\n");
@@ -93,54 +110,24 @@ int max_label_fringe()
             max = labels[temp->v_num];
         }
         temp = temp->next;
-        //fringe_count++;
     }
-
-    /* One linked list isn't enough for over approximate 2500 vertices
-    if(gfringe_count > 2500)
-    {
-        next_fringe_list = 1;
-        temp = fringe_backup->list_head();
-        while(temp!=NULL)
-        {
-            if(temp->weight > max)
-            {
-                max_node = temp->v_num;
-                max = temp->weight;
-            }
-            temp = temp->next;
-            backup_count++;
-        }
-    }*/
-    /* Delete the max label fringe from the fringe list, later to be examined as in-tree */
-    //if(!next_fringe_list)
-    //{
-        //if(max_node == fringe->list_head()->v_num)printf("Deleting Head\n");
-        //if(max_node == fringe->list_tail()->v_num)printf("Deleting Tail\n");
-        fringe->Delete(max_node);
-        //gfringe_count--;
-    //}
-    /*else
-    {
-        fringe_backup->Delete(max_node);
-        gbackup_count--;
-    }*/
-    //printf("Extracted max. Fringe count = %d, backup count = %d\n", fringe_count, backup_count);
+    fringe->Delete(max_node);
     return max_node;
-}
+}*/
+
 void find_path(int _source, int _target)
 {
     int source = _source;
     int target = _target;
-    int intree_count = 0;
     vertices *temp;
-
+    
     /* Find until target node is in-tree */
     while(status[target]!=3)
     {
         /* Pick the fringe with largest label and mark it in-tree, then update it's neighbor */
         int u;
-        u = max_label_fringe();
+        EDGE max_fringe = fringe->extract_max();
+        u = max_fringe.edge_num;
         status[u] = 3;
         temp = edge_list[u]->list_head();
         while(temp!=NULL)
@@ -158,8 +145,8 @@ void find_path(int _source, int _target)
             {
                 /* Update to fringe, and add to fringe list */
                 status[cur_v] = 2;
-                fringe->newvertex(cur_v, temp->weight);
-
+                fringe->Insert(cur_v, temp->weight);
+                
                 if(labels[u] < temp->weight) labels[cur_v] = labels[u];
                 else labels[cur_v] = temp->weight;
                 
@@ -179,8 +166,6 @@ void find_path(int _source, int _target)
             }
             temp = temp->next;
         }
-        //intree_count++;
-        //printf("Intree count = %d\n", intree_count);
     }
 }
 //-----------------------------------------------------

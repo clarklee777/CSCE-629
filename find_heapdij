@@ -1,0 +1,11 @@
+./heapdij dense01.txt > heapdij_result.txt
+./heapdij dense02.txt >> heapdij_result.txt
+./heapdij dense03.txt >> heapdij_result.txt
+./heapdij dense04.txt >> heapdij_result.txt
+./heapdij dense05.txt >> heapdij_result.txt
+./heapdij sparse01.txt >> heapdij_result.txt
+./heapdij sparse02.txt >> heapdij_result.txt
+./heapdij sparse03.txt >> heapdij_result.txt
+./heapdij sparse04.txt >> heapdij_result.txt
+./nheapdij sparse05.txt >> heapdij_result.txt
+vi heapdij_result.txt

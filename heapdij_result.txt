@@ -1,0 +1,50 @@
+Finding graph file: dense01.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9993
+Computing time = 1.232192 second
+
+Finding graph file: dense02.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9915
+Computing time = 1.341213 second
+
+Finding graph file: dense03.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9937
+Computing time = 1.454503 second
+
+Finding graph file: dense04.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9938
+Computing time = 1.381688 second
+
+Finding graph file: dense05.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9955
+Computing time = 1.472345 second
+
+Finding graph file: sparse01.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 8377
+Computing time = 0.084407 second
+
+Finding graph file: sparse02.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 6222
+Computing time = 0.088318 second
+
+Finding graph file: sparse03.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 4699
+Computing time = 0.092540 second
+
+Finding graph file: sparse04.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 4038
+Computing time = 0.089503 second
+
+Finding graph file: sparse05.txt 
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 4679
+Computing time = 0.115533 second
+

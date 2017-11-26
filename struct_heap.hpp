@@ -11,21 +11,21 @@
 #define TOTAL_VERTICES 10000000
 
 struct EDGE{
-    int edge_num;
-    int edge_weight;
-
+    int v1, v2;
+    int weight;
 };
 
 class heap{
     
 private:
-    int H[TOTAL_VERTICES]; //heap array
-    int D[TOTAL_VERTICES]; //data array
+    //int H[TOTAL_VERTICES]; //heap array
+    //int D[TOTAL_VERTICES]; //data array
+    EDGE heap_array[TOTAL_VERTICES];
     int h_size;            // Returns number of elements in the heap
-    void change_size(int _size)  // Change the private variable : size of the heap structure
+    /*void change_size(int _size)  // Change the private variable : size of the heap structure
     {
         h_size = _size;
-    }
+    }*/
     
 public:
     /* Class initializer */
@@ -34,66 +34,71 @@ public:
         int i = 0;
         while (i!=TOTAL_VERTICES)
         {
-            H[i] = 0;
-            D[i] = 0;
+            heap_array[i].v1 = 0;
+            heap_array[i].v2 = 0;
+            heap_array[i].weight = 0;
             i++;
         }
         h_size = 0;
     }
-    /* Extract max values and delete it all at once */
-    EDGE extract_max()
-    {
-        EDGE temp;
-        temp.edge_weight = D[1];
-        temp.edge_num = H[1];
-        delete_max();
-        return temp;
-    }
     
-    /* Find the maximum item in the max-heap */
+    /* Find the maximum item in the max-heap
     int max_weight()
     {
         int w_max = D[1];
         return w_max;
-    }
+    }*/
     
-    /* Returns the node of maximum value from a max heap */
+    /* Returns the node of maximum value from a max heap
     int max_vertex()
     {
         int vertex_num = H[1];
         delete_max();
         return vertex_num;
     }
-    
+    */
+    /* Return the max element and delete it from the heap */
+    EDGE extract_max()
+    {
+        EDGE max_vertex = heap_array[1];
+        //max_vertex = heap_array[1];
+        delete_max();
+        return max_vertex;
+    }
     /* Remove the root node of a max heap */
     void delete_max()
     {
-        int size = h_size;
-        H[1] = H[size];
-        D[1] = D[size];
+        //int size = h_size;
+        //H[1] = H[size];
+        //D[1] = D[size];
         
-        size = size - 1;
-        change_size(size);
+        heap_array[1] = heap_array[h_size];
         
+        //size = size - 1;
+        //change_size(size);
+        h_size--;
         heapify(1);
     }
     
     /* Add a new node to the max-heap */
-    void Insert(int _vertice, int _weight)
+    void Insert(struct EDGE edge/*int _vertice, int _weight*/)
     {
-        int size = h_size;
+        //int size = h_size;
+        //size = size + 1;
         
-        size = size + 1;
+        h_size++;
         
-        H[size] = _vertice;
-        D[size] = _weight;
+        //H[size] = _vertice;
+        //D[size] = _weight;
         
-        change_size(size);
+        heap_array[h_size] = edge;
         
-        heapify(size);
+        //change_size(size);
+        
+        heapify(h_size);
     }
     
-    /* Delete a node from the max-heap */
+    /* Delete a node from the max-heap
     void Delete(int _vertice)
     {
         int size = h_size;
@@ -117,22 +122,22 @@ public:
         heapify(1);
         
     }
-    
+    */
     /* Rearrange the heap for violation of the heap roperty */
     void heapify(int bug)
     {
         /* Bug is the vertex's index in the heap structure, not the vertex number */
         /* When the bug is larger than its parent node : push up swap */
-        if((bug>1)&&(D[bug]>D[bug/2]))
+        if((bug>1)&&(heap_array[bug].weight>heap_array[bug/2].weight))
         {
             int temp = bug;
             
             /* Keeping swapping while the bug is still larger than its parent node */
-            while ((temp>1)&&(D[temp]>D[temp/2]))
+            while ((temp>1)&&(heap_array[temp].weight>heap_array[temp/2].weight))
             {
-                int h_temp = H[temp];
-                int d_temp = D[temp];
-                
+                //int h_temp = H[temp];
+                //int d_temp = D[temp];
+                EDGE temp = 
                 H[temp] = H[temp/2];
                 D[temp] = D[temp/2];
                 
