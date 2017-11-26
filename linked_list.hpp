@@ -95,8 +95,8 @@ public:
     /* Delete the element by the given vertex number in the linked_list */
     void Delete(int vertex_num)
     {
+        if(head==NULL) return;
         vertices *temp = new vertices;
-        //vertices *bufr = new vertices;
         temp = head;
         while(temp->next!=NULL)
         {
@@ -107,16 +107,18 @@ public:
         if(temp->next!=NULL) temp->next->prev = temp->prev;
         if(temp->prev!=NULL) temp->prev->next = temp->next;
         
-        //free(temp);
+        delete temp;
     }
     
     vertices * list_head()
     {
-        return head;
+        if (head==NULL) return NULL;
+        else return head;
     }
     
     vertices * list_tail()
     {
-        return tail;
+        if (tail==NULL) return NULL;
+        else return tail;
     }
 };

@@ -1,0 +1,11 @@
+./noheapdij dense01.txt > noheapdij_result.txt
+./noheapdij dense02.txt >> noheapdij_result.txt
+./noheapdij dense03.txt >> noheapdij_result.txt
+./noheapdij dense04.txt >> noheapdij_result.txt
+./noheapdij dense05.txt >> noheapdij_result.txt
+./noheapdij sparse01.txt >> noheapdij_result.txt
+./noheapdij sparse02.txt >> noheapdij_result.txt
+./noheapdij sparse03.txt >> noheapdij_result.txt
+./noheapdij sparse04.txt >> noheapdij_result.txt
+./noheapdij sparse05.txt >> noheapdij_result.txt
+vi noheapdij_result.txt
