@@ -6,6 +6,7 @@
 
 struct vertices{
     vertices *next; //pointed to the next vertex in the linked list
+    vertices *prev;
     int v_num;      //the vertex number
     int weight;
 };
@@ -26,19 +27,24 @@ public:
     {
         vertices *temp = new vertices;
         temp->next = NULL;
+        temp->prev = NULL;
         temp->v_num = vertex_num;
         temp->weight = _weight;
         if(head==NULL)
         {
             head = temp;
             tail = temp;
-            temp = NULL;
+            temp->prev = NULL;
+            temp->next = NULL;
         }
         else
         {
+            temp->next = NULL;
+            temp->prev = tail;
             tail->next = temp;
             tail = temp;
         }
+        temp = NULL;
     }
     /* A return value to indicate whether the edge exists or not, no repeated edges between vertices allowed */
     /* If return a zero => no edge exist, otherwise => return the edge's weight */
@@ -72,4 +78,45 @@ public:
         printf("\n");
     }
     
+    /* Function to display the linked list content */
+    void display_with_weight()
+    {
+        vertices *temp=new vertices;
+        temp=head;
+        while(temp!=NULL)
+        {
+            //printf("%d \t", temp->v_num); //print only connected vertex
+            printf("%d(%d)\t", temp->v_num, temp->weight); //also print edge's weight
+            temp=temp->next;
+        }
+        printf("\n");
+    }
+    
+    /* Delete the element by the given vertex number in the linked_list */
+    void Delete(int vertex_num)
+    {
+        vertices *temp = new vertices;
+        //vertices *bufr = new vertices;
+        temp = head;
+        while(temp->next!=NULL)
+        {
+            if(temp->v_num==vertex_num) break;
+            else temp = temp->next;
+        }
+        if(temp == head) head = temp->next;
+        if(temp->next!=NULL) temp->next->prev = temp->prev;
+        if(temp->prev!=NULL) temp->prev->next = temp->next;
+        
+        //free(temp);
+    }
+    
+    vertices * list_head()
+    {
+        return head;
+    }
+    
+    vertices * list_tail()
+    {
+        return tail;
+    }
 };
