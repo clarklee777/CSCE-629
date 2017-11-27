@@ -99,25 +99,6 @@ int max_fringe()
     fringe[max_node] = 0;
     return max_node;
 }
-/*
-int max_label_fringe()
-{
-    int max = 0;
-    int max_node = 0;
-    vertices *temp = fringe->list_head();
-    // Transverse throught the linked list to find the max label fringe, then extract it
-    while(temp!=NULL)
-    {
-        if(labels[temp->v_num] > max)
-        {
-            max_node = temp->v_num;
-            max = labels[temp->v_num];
-        }
-        temp = temp->next;
-    }
-    fringe->Delete(max_node);
-    return max_node;
-}*/
 
 void find_path(int _source, int _target)
 {
@@ -220,8 +201,8 @@ int main(int argc, char *argv[])
     /* Initialize the graph */
     //int source = rand()%4999;
     //int target = rand()%4999;
-    int source = 4305;
-    int target = 392;
+    int source = 228;
+    int target = 3741;
     
     initialize_graph(source);
     

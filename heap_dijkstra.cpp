@@ -181,8 +181,8 @@ int main(int argc, char *argv[])
     /* Initialize the graph */
     //int source = rand()%4999;
     //int target = rand()%4999;
-    int source = 4305;
-    int target = 392;
+    int source = 228;
+    int target = 3741;
     
     initialize_graph(source);
     /*
