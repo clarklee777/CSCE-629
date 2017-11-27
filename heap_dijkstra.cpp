@@ -52,16 +52,6 @@ void print_linked_list(int _edge_count)
     printf("Total %d edges.\n", _edge_count);
 }
 
-/* Make the edge name XX_YY, XX is the small vertex number while YY is larger */
-int name_edge(int v1, int v2)
-{
-    int edge_num;
-    
-    if(v1<v2) edge_num = v1*10000 + v2;
-    else edge_num = v2*10000 + v1;
-    
-    return edge_num;
-}
 void initialize_graph(int _source)
 {
     /* Initialize the graph vertices : label = infinite, status = 1 (unseen) */
@@ -78,7 +68,6 @@ void initialize_graph(int _source)
     /* Create a fringe list by first examine source node's neighbor nodes */
     vertices *temp;
     temp = edge_list[_source]->list_head();
-    int edge;
     while(temp!=NULL)
     {
         int currentv= temp->v_num;
@@ -86,34 +75,13 @@ void initialize_graph(int _source)
         labels[currentv] = temp->weight;
         parent[currentv] = _source;
         
-        //fringe->newvertex(currentv, temp->weight);
-        //edge = name_edge(_source,currentv);
         fringe->Insert(currentv,temp->weight);
         temp = temp->next;
     }
+    //printf("The fringe list before extract :\n");
+    //fringe->display_heap();
 }
-/* Doesn't need list since we utilizes heap structure for extracting max fringe
-int max_label_fringe()
-{
-    int max = 0;
-    int max_node = 0;
-
-    vertices *temp = fringe->list_head();
-    
-    // Transverse throught the linked list to find the max label fringe, then extract it
-    while(temp!=NULL)
-    {
-        //printf("In looping01...\n");
-        if(labels[temp->v_num] > max)
-        {
-            max_node = temp->v_num;
-            max = labels[temp->v_num];
-        }
-        temp = temp->next;
-    }
-    fringe->Delete(max_node);
-    return max_node;
-}*/
+/* Doesn't need fringe linked list since we utilizes heap structure for extracting max fringe */
 
 void find_path(int _source, int _target)
 {
@@ -124,7 +92,7 @@ void find_path(int _source, int _target)
     /* Find until target node is in-tree */
     while(status[target]!=3)
     {
-        /* Pick the fringe with largest label and mark it in-tree, then update it's neighbor */
+        /* Pick the fringe with largest label and mark it in-tree, then update its neighbor's status */
         int u;
         EDGE max_fringe = fringe->extract_max();
         u = max_fringe.edge_num;
@@ -147,8 +115,10 @@ void find_path(int _source, int _target)
                 status[cur_v] = 2;
                 fringe->Insert(cur_v, temp->weight);
                 
-                if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                else labels[cur_v] = temp->weight;
+                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
+                //else labels[cur_v] = temp->weight;
+                
+                labels[cur_v] = min_bw_label;
                 
                 /* Update the parent array */
                 parent[cur_v] = u;
@@ -158,8 +128,9 @@ void find_path(int _source, int _target)
             else if((status[cur_v] == 2)&&(labels[cur_v]< min_bw_label))
             {
                 /* Update the max bandwidth label */
-                if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                else labels[cur_v] = temp->weight;
+                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
+                //else labels[cur_v] = temp->weight;
+                labels[cur_v] = min_bw_label;
                 
                 /* Update the parent array */
                 parent[cur_v] = u;
@@ -218,15 +189,22 @@ int main(int argc, char *argv[])
     /* Initialize the graph */
     //int source = rand()%4999;
     //int target = rand()%4999;
-    int source = 4305;
-    int target = 392;
+    int source = 2203;
+    int target = 3491;
     
     initialize_graph(source);
+    /*
+    printf("The fringe list :\n");
+    fringe->display_heap();
+    //find_path(source,target);
+    EDGE mfringe = fringe->extract_max();
+    printf("The max label fringe = %d,  weight = %d\n", mfringe.edge_num, mfringe.edge_weight);
     
-    //printf("The fringe list :\n");
-    //fringe->display_with_weight();
+    printf("The fringe list after extract max :\n");
+    fringe->display_heap();
+    */
+    
     find_path(source,target);
-    
     
     printf("The source = %d, target = %d\n", source, target);
     printf("The maximal bandwidth path's bandwidth = %d\n", labels[target]);

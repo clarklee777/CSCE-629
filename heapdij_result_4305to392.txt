@@ -1,50 +1,50 @@
 Finding graph file: dense01.txt 
 The source = 4305, target = 392
 The maximal bandwidth path's bandwidth = 9993
-Computing time = 1.128472 second
+Computing time = 1.192236 second
 
 Finding graph file: dense02.txt 
 The source = 4305, target = 392
-The maximal bandwidth path's bandwidth = 9977
-Computing time = 1.221140 second
+The maximal bandwidth path's bandwidth = 9915
+Computing time = 1.368532 second
 
 Finding graph file: dense03.txt 
 The source = 4305, target = 392
-The maximal bandwidth path's bandwidth = 9983
-Computing time = 1.442443 second
+The maximal bandwidth path's bandwidth = 9937
+Computing time = 1.462227 second
 
 Finding graph file: dense04.txt 
 The source = 4305, target = 392
-The maximal bandwidth path's bandwidth = 9982
-Computing time = 1.372379 second
+The maximal bandwidth path's bandwidth = 9938
+Computing time = 1.400530 second
 
 Finding graph file: dense05.txt 
 The source = 4305, target = 392
-The maximal bandwidth path's bandwidth = 9981
-Computing time = 1.230527 second
+The maximal bandwidth path's bandwidth = 9955
+Computing time = 1.534768 second
 
 Finding graph file: sparse01.txt 
 The source = 4305, target = 392
-The maximal bandwidth path's bandwidth = 42
-Computing time = 0.016803 second
+The maximal bandwidth path's bandwidth = 8377
+Computing time = 0.090062 second
 
 Finding graph file: sparse02.txt 
 The source = 4305, target = 392
 The maximal bandwidth path's bandwidth = 6222
-Computing time = 0.070653 second
+Computing time = 0.091922 second
 
 Finding graph file: sparse03.txt 
 The source = 4305, target = 392
-The maximal bandwidth path's bandwidth = 6559
-Computing time = 0.082656 second
+The maximal bandwidth path's bandwidth = 4699
+Computing time = 0.087821 second
 
 Finding graph file: sparse04.txt 
 The source = 4305, target = 392
 The maximal bandwidth path's bandwidth = 4038
-Computing time = 0.107172 second
+Computing time = 0.088831 second
 
 Finding graph file: sparse05.txt 
 The source = 4305, target = 392
 The maximal bandwidth path's bandwidth = 4679
-Computing time = 0.088190 second
+Computing time = 0.093346 second
 

@@ -41,6 +41,8 @@ int main(int argc, char *argv[])
             
         }
      }
+    test_heap->display_heap();
+    /*
     while(test_heap->heap_size()!=0)
     {
         EDGE temp = test_heap->extract_max();
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
         v2 = vertex%10000;
         printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);
 
-    }
+    }*/
     
     fclose(fp);
     return 0;

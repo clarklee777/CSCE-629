@@ -76,63 +76,26 @@ void initialize_graph(int _source)
 
 int max_label_fringe()
 {
-    //printf("In finding max fringe...\n");
     int max = 0;
     int max_node = 0;
-    //int fringe_count = 0;
-    //int backup_count = 0;
-    //bool next_fringe_list = 0;
     vertices *temp = fringe->list_head();
     /* Transverse throught the linked list to find the max label fringe, then extract it */
     while(temp!=NULL)
     {
-        //printf("In looping01...\n");
         if(labels[temp->v_num] > max)
         {
             max_node = temp->v_num;
             max = labels[temp->v_num];
         }
         temp = temp->next;
-        //fringe_count++;
     }
-
-    /* One linked list isn't enough for over approximate 2500 vertices
-    if(gfringe_count > 2500)
-    {
-        next_fringe_list = 1;
-        temp = fringe_backup->list_head();
-        while(temp!=NULL)
-        {
-            if(temp->weight > max)
-            {
-                max_node = temp->v_num;
-                max = temp->weight;
-            }
-            temp = temp->next;
-            backup_count++;
-        }
-    }*/
-    /* Delete the max label fringe from the fringe list, later to be examined as in-tree */
-    //if(!next_fringe_list)
-    //{
-        //if(max_node == fringe->list_head()->v_num)printf("Deleting Head\n");
-        //if(max_node == fringe->list_tail()->v_num)printf("Deleting Tail\n");
-        fringe->Delete(max_node);
-        //gfringe_count--;
-    //}
-    /*else
-    {
-        fringe_backup->Delete(max_node);
-        gbackup_count--;
-    }*/
-    //printf("Extracted max. Fringe count = %d, backup count = %d\n", fringe_count, backup_count);
+    fringe->Delete(max_node);
     return max_node;
 }
 void find_path(int _source, int _target)
 {
     int source = _source;
     int target = _target;
-    int intree_count = 0;
     vertices *temp;
 
     /* Find until target node is in-tree */
@@ -160,8 +123,9 @@ void find_path(int _source, int _target)
                 status[cur_v] = 2;
                 fringe->newvertex(cur_v, temp->weight);
 
-                if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                else labels[cur_v] = temp->weight;
+                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
+                //else labels[cur_v] = temp->weight;
+                labels[cur_v] = min_bw_label;
                 
                 /* Update the parent array */
                 parent[cur_v] = u;
@@ -171,8 +135,9 @@ void find_path(int _source, int _target)
             else if((status[cur_v] == 2)&&(labels[cur_v]< min_bw_label))
             {
                 /* Update the max bandwidth label */
-                if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                else labels[cur_v] = temp->weight;
+                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
+                //else labels[cur_v] = temp->weight;
+                labels[cur_v] = min_bw_label;
                 
                 /* Update the parent array */
                 parent[cur_v] = u;
@@ -233,8 +198,8 @@ int main(int argc, char *argv[])
     /* Initialize the graph */
     //int source = rand()%4999;
     //int target = rand()%4999;
-    int source = 4305;
-    int target = 392;
+    int source = 2203;
+    int target = 3491;
     
     initialize_graph(source);
     

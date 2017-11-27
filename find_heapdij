@@ -1,3 +1,4 @@
+g++ -o heapdij heap_dijkstra.cpp
 ./heapdij dense01.txt > heapdij_result.txt
 ./heapdij dense02.txt >> heapdij_result.txt
 ./heapdij dense03.txt >> heapdij_result.txt
@@ -7,5 +8,5 @@
 ./heapdij sparse02.txt >> heapdij_result.txt
 ./heapdij sparse03.txt >> heapdij_result.txt
 ./heapdij sparse04.txt >> heapdij_result.txt
-./nheapdij sparse05.txt >> heapdij_result.txt
+./heapdij sparse05.txt >> heapdij_result.txt
 vi heapdij_result.txt

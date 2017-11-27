@@ -22,10 +22,10 @@ private:
     int H[TOTAL_VERTICES]; //heap array
     int D[TOTAL_VERTICES]; //data array
     int h_size;            // Returns number of elements in the heap
-    void change_size(int _size)  // Change the private variable : size of the heap structure
+    /*void change_size(int _size)  // Change the private variable : size of the heap structure
     {
         h_size = _size;
-    }
+    }*/
     
 public:
     /* Class initializer */
@@ -69,34 +69,27 @@ public:
     void delete_max()
     {
         int size = h_size;
-        H[1] = H[size];
-        D[1] = D[size];
+        H[1] = H[h_size];
+        D[1] = D[h_size];
         
-        size = size - 1;
-        change_size(size);
-        
+        h_size--;
         heapify(1);
     }
     
     /* Add a new node to the max-heap */
     void Insert(int _vertice, int _weight)
     {
-        int size = h_size;
+        h_size++;
         
-        size = size + 1;
+        H[h_size] = _vertice;
+        D[h_size] = _weight;
         
-        H[size] = _vertice;
-        D[size] = _weight;
-        
-        change_size(size);
-        
-        heapify(size);
+        heapify(h_size);
     }
     
     /* Delete a node from the max-heap */
     void Delete(int _vertice)
     {
-        int size = h_size;
         int index = 0;
         
         for (int i = 1; i<= TOTAL_VERTICES; i++)
@@ -108,14 +101,12 @@ public:
             }
         }
         
-        H[index] = H[size];
-        D[index] = D[size];
+        H[index] = H[h_size];
+        D[index] = D[h_size];
         
-        size = size - 1;
-        change_size(size);
+        h_size--;
         
         heapify(1);
-        
     }
     
     /* Rearrange the heap for violation of the heap roperty */
@@ -173,7 +164,26 @@ public:
             }
         }
     }
-    
+    /* Printout the heap datas */
+    void display_heap()
+    {
+        
+        while(h_size!=0)
+        {
+            EDGE temp = heap::extract_max();
+            //int vertex, weight;
+            //int v1, v2;
+            
+            //weight = temp.edge_weight;
+            //vertex = temp.edge_num;
+            
+            //v1 = vertex/10000;
+            //v2 = vertex%10000;
+            printf("%d (%d)\t", temp.edge_num, temp.edge_weight);
+            //heap::Insert(temp.edge_num, temp.edge_weight);
+            //printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);
+        }
+    }
     /* Return the current heap size */
     int heap_size()
     {

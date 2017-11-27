@@ -1,3 +1,4 @@
+g++ -o noheapdij nonheap_dijkstra.cpp
 ./noheapdij dense01.txt > noheapdij_result.txt
 ./noheapdij dense02.txt >> noheapdij_result.txt
 ./noheapdij dense03.txt >> noheapdij_result.txt
