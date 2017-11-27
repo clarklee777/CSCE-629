@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define TOTAL_VERTICES 10000000
+#define TOTAL_VERTICES 5000
 
 struct EDGE{
     int edge_num;
@@ -164,13 +164,43 @@ public:
             }
         }
     }
+    
+    /* Update a given element's data in the heap structure */
+    void update(int node, int data)
+    {
+        int j;
+        //printf("Heap current size = %d, node to find = %d weight = %d\n", h_size, node, data);
+        bool found = 0;
+        for(int i=1; i<=h_size; i++)
+        {
+            if(H[i] == node)
+            {
+                D[i] = data;
+                found = 1;
+                heapify(i);
+                break;
+            }
+        }
+        if(!found)
+        {
+            printf("Element (%d, %d) not found\n", node, data);
+            for(int j=0; j<h_size; j++)
+            {
+                printf("H[%d] = %d\n", j, H[j]);
+            }
+            display_heap();
+            exit(0);
+        }
+    }
+    
     /* Printout the heap datas */
     void display_heap()
     {
-        
+        int i;
         while(h_size!=0)
         {
             EDGE temp = heap::extract_max();
+            i++;
             //int vertex, weight;
             //int v1, v2;
             
@@ -179,7 +209,7 @@ public:
             
             //v1 = vertex/10000;
             //v2 = vertex%10000;
-            printf("%d (%d)\t", temp.edge_num, temp.edge_weight);
+            printf("%d %d (%d)\n", i, temp.edge_num, temp.edge_weight);
             //heap::Insert(temp.edge_num, temp.edge_weight);
             //printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);
         }

@@ -51,8 +51,7 @@ public:
     int find_edge(int vertex_num)
     {
         int edge_weight;
-        vertices *temp = new vertices;
-        temp = head;
+        vertices *temp = head;
         while(temp->next!=NULL)
         {
             if(temp->v_num==vertex_num)
@@ -67,8 +66,7 @@ public:
     /* Function to display the linked list content */
     void display()
     {
-        vertices *temp=new vertices;
-        temp=head;
+        vertices *temp= head;
         while(temp!=NULL)
         {
             printf("%d \t", temp->v_num); //print only connected vertex
@@ -81,7 +79,7 @@ public:
     /* Function to display the linked list content */
     void display_with_weight()
     {
-        vertices *temp=new vertices;
+        vertices *temp=head;
         temp=head;
         while(temp!=NULL)
         {
@@ -96,8 +94,7 @@ public:
     void Delete(int vertex_num)
     {
         if(head==NULL) return;
-        vertices *temp = new vertices;
-        temp = head;
+        vertices *temp = head;
         while(temp->next!=NULL)
         {
             if(temp->v_num==vertex_num) break;
@@ -110,12 +107,35 @@ public:
         delete temp;
     }
     
+    /* Update an element's data in the linked list by given information */
+    void update(int vertex_num, int weight)
+    {
+        bool found = 0;
+        vertices *temp = head;
+        while(temp!=NULL)
+        {
+            if(temp->v_num==vertex_num)
+            {
+                temp->weight = weight;
+                found = 1;
+                break;
+            }
+            else temp = temp->next;
+        }
+        if (!found)
+        {
+            printf("Fringe not found.\n");
+            exit(0);
+        }
+    }
+    /* Return private linked list value "head" */
     vertices * list_head()
     {
         if (head==NULL) return NULL;
         else return head;
     }
     
+    /* Return private linked list value "tail" */
     vertices * list_tail()
     {
         if (tail==NULL) return NULL;

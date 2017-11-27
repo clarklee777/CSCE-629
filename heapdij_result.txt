@@ -1,50 +1,50 @@
 Finding graph file: dense01.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 9460
-Computing time = 1.240622 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9993
+Computing time = 1.136481 second
 
 Finding graph file: dense02.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 9916
-Computing time = 1.339264 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9977
+Computing time = 1.423854 second
 
 Finding graph file: dense03.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 9538
-Computing time = 1.304459 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9983
+Computing time = 1.552064 second
 
 Finding graph file: dense04.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 9959
-Computing time = 1.430966 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9982
+Computing time = 1.480730 second
 
 Finding graph file: dense05.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 9958
-Computing time = 1.432971 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 9981
+Computing time = 1.504821 second
 
 Finding graph file: sparse01.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 4731
-Computing time = 0.090805 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 8560
+Computing time = 0.009914 second
 
 Finding graph file: sparse02.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 7558
-Computing time = 0.089947 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 6222
+Computing time = 0.032526 second
 
 Finding graph file: sparse03.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 8512
-Computing time = 0.090986 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 6559
+Computing time = 0.030617 second
 
 Finding graph file: sparse04.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 6769
-Computing time = 0.086940 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 4038
+Computing time = 0.034911 second
 
 Finding graph file: sparse05.txt 
-The source = 2203, target = 3491
-The maximal bandwidth path's bandwidth = 5381
-Computing time = 0.092306 second
+The source = 4305, target = 392
+The maximal bandwidth path's bandwidth = 4679
+Computing time = 0.030415 second
 

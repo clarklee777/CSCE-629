@@ -22,8 +22,13 @@
 //-----------------------------------------------------
 
 list * edge_list[TOTAL_VERTICES+1];
-list * fringe = new list();
+//list * fringe = new list();
+/*struct NODE{
+    int node_num;
+    int label;
+};*/
 
+int fringe[TOTAL_VERTICES];
 int status[TOTAL_VERTICES]; // status : 1 = unseen / 2 = fringe / 3 = in-tree
 int labels[TOTAL_VERTICES];
 int parent[TOTAL_VERTICES];
@@ -48,12 +53,13 @@ void print_linked_list(int _edge_count)
 
 void initialize_graph(int _source)
 {
-    /* Initialize the graph vertices : label = infinite, status = 1 (unseen) */
+    /* Initialize the graph vertices : label = 0, status = 1 (unseen) */
     for(int i=0; i<TOTAL_VERTICES; i++)
     {
         status[i] = 1;
         labels[i] = 0;
         parent[i] = 9999;
+        fringe[i] = 0;
     }
     /* Initialize the source vertex : label = 0, status = 3 (in-tree) */
     labels[_source] = 0;
@@ -69,17 +75,37 @@ void initialize_graph(int _source)
         labels[currentv] = temp->weight;
         parent[currentv] = _source;
         
-        fringe->newvertex(currentv, temp->weight);
+        fringe[currentv] = temp->weight;
         temp = temp->next;
     }
 }
-
+/* Transverse throught the linked list to find the max label fringe, then extract it */
+int max_fringe()
+{
+    int max = 0;
+    int max_node = 0;
+    
+    for (int i=0; i<TOTAL_VERTICES; i++)
+    {
+        if(fringe[i]!=0)
+        {
+            if(labels[i] > max)
+            {
+                max_node = i;
+                max = labels[i];
+            }
+        }
+    }
+    fringe[max_node] = 0;
+    return max_node;
+}
+/*
 int max_label_fringe()
 {
     int max = 0;
     int max_node = 0;
     vertices *temp = fringe->list_head();
-    /* Transverse throught the linked list to find the max label fringe, then extract it */
+    // Transverse throught the linked list to find the max label fringe, then extract it
     while(temp!=NULL)
     {
         if(labels[temp->v_num] > max)
@@ -91,7 +117,8 @@ int max_label_fringe()
     }
     fringe->Delete(max_node);
     return max_node;
-}
+}*/
+
 void find_path(int _source, int _target)
 {
     int source = _source;
@@ -102,8 +129,7 @@ void find_path(int _source, int _target)
     while(status[target]!=3)
     {
         /* Pick the fringe with largest label and mark it in-tree, then update it's neighbor */
-        int u;
-        u = max_label_fringe();
+        int u = max_fringe();
         status[u] = 3;
         temp = edge_list[u]->list_head();
         while(temp!=NULL)
@@ -121,31 +147,27 @@ void find_path(int _source, int _target)
             {
                 /* Update to fringe, and add to fringe list */
                 status[cur_v] = 2;
-                fringe->newvertex(cur_v, temp->weight);
+                fringe[cur_v] = min_bw_label;
 
                 //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
                 //else labels[cur_v] = temp->weight;
                 labels[cur_v] = min_bw_label;
-                
+
                 /* Update the parent array */
                 parent[cur_v] = u;
             }
             
-            /* If the neighbor is a fringe, update to its label only */
+            /* If the neighbor is a fringe, update its label only */
             else if((status[cur_v] == 2)&&(labels[cur_v]< min_bw_label))
             {
-                /* Update the max bandwidth label */
-                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                //else labels[cur_v] = temp->weight;
                 labels[cur_v] = min_bw_label;
-                
+                fringe[cur_v] = min_bw_label;
                 /* Update the parent array */
                 parent[cur_v] = u;
             }
             temp = temp->next;
         }
-        //intree_count++;
-        //printf("Intree count = %d\n", intree_count);
+
     }
 }
 //-----------------------------------------------------
@@ -198,8 +220,8 @@ int main(int argc, char *argv[])
     /* Initialize the graph */
     //int source = rand()%4999;
     //int target = rand()%4999;
-    int source = 2203;
-    int target = 3491;
+    int source = 4305;
+    int target = 392;
     
     initialize_graph(source);
     

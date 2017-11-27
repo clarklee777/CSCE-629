@@ -78,10 +78,7 @@ void initialize_graph(int _source)
         fringe->Insert(currentv,temp->weight);
         temp = temp->next;
     }
-    //printf("The fringe list before extract :\n");
-    //fringe->display_heap();
 }
-/* Doesn't need fringe linked list since we utilizes heap structure for extracting max fringe */
 
 void find_path(int _source, int _target)
 {
@@ -113,10 +110,7 @@ void find_path(int _source, int _target)
             {
                 /* Update to fringe, and add to fringe list */
                 status[cur_v] = 2;
-                fringe->Insert(cur_v, temp->weight);
-                
-                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                //else labels[cur_v] = temp->weight;
+                fringe->Insert(cur_v, min_bw_label);
                 
                 labels[cur_v] = min_bw_label;
                 
@@ -127,11 +121,9 @@ void find_path(int _source, int _target)
             /* If the neighbor is a fringe, update to its label only */
             else if((status[cur_v] == 2)&&(labels[cur_v]< min_bw_label))
             {
-                /* Update the max bandwidth label */
-                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                //else labels[cur_v] = temp->weight;
+                //printf("Update orirgnal (node,label) = (%d, %d)\n", cur_v, labels[cur_v]);
+                fringe->update(cur_v,min_bw_label);
                 labels[cur_v] = min_bw_label;
-                
                 /* Update the parent array */
                 parent[cur_v] = u;
             }
@@ -189,8 +181,8 @@ int main(int argc, char *argv[])
     /* Initialize the graph */
     //int source = rand()%4999;
     //int target = rand()%4999;
-    int source = 2203;
-    int target = 3491;
+    int source = 4305;
+    int target = 392;
     
     initialize_graph(source);
     /*
