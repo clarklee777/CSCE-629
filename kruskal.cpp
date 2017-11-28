@@ -25,11 +25,6 @@
 
 list * edge_list[TOTAL_VERTICES+1]; //
 heap * sort_edge = new heap();
-/*
-struct NODE{
-    int adj_node;
-    int weight;
-};  */
 
 int parent[TOTAL_VERTICES]; // array to track whether new adding edges makes a cycle in MxST
 int rank[TOTAL_VERTICES];   // array to keep track of the cycle deciding trees' depths
@@ -39,8 +34,8 @@ int status[TOTAL_VERTICES]; // status for DFS : 0 = unvisited(white), 1 = visist
 int edge_count = 0;         // total edge counts in MxST, should be exact 4999
 int max_bandwidth = 10000;      // Final max-bandwidth path's bandwidth
 
-int source = 228;
-int target = 3741;
+int source = 4305;
+int target = 392;
 bool path_found = 0;
 //-----------------------------------------------------
 //---------------**** FUNCTIONS ****-------------------
