@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #ifndef TOTAL_SIZE
-#define TOTAL_SIZE 5000000
+#define TOTAL_SIZE 3000000
 #endif
 struct EDGE{
     int edge_num;

@@ -1,0 +1,12 @@
+g++ -o kruskal kruskal.cpp
+./kruskal dense01.txt > kruskal_result.txt
+./kruskal dense02.txt >> kruskal_result.txt
+./kruskal dense03.txt >> kruskal_result.txt
+./kruskal dense04.txt >> kruskal_result.txt
+./kruskal dense05.txt >> kruskal_result.txt
+./kruskal sparse01.txt >> kruskal_result.txt
+./kruskal sparse02.txt >> kruskal_result.txt
+./kruskal sparse03.txt >> kruskal_result.txt
+./kruskal sparse04.txt >> kruskal_result.txt
+./kruskal sparse05.txt >> kruskal_result.txt
+vi kruskal_result.txt

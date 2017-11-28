@@ -52,7 +52,7 @@ public:
     {
         int edge_weight;
         vertices *temp = head;
-        while(temp->next!=NULL)
+        while(temp!=NULL)
         {
             if(temp->v_num==vertex_num)
             {
@@ -95,7 +95,7 @@ public:
     {
         if(head==NULL) return;
         vertices *temp = head;
-        while(temp->next!=NULL)
+        while(temp!=NULL)
         {
             if(temp->v_num==vertex_num) break;
             else temp = temp->next;
@@ -104,7 +104,7 @@ public:
         if(temp->next!=NULL) temp->next->prev = temp->prev;
         if(temp->prev!=NULL) temp->prev->next = temp->next;
         
-        delete temp;
+        //delete temp;
     }
     
     /* Update an element's data in the linked list by given information */

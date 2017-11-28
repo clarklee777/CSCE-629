@@ -1,0 +1,50 @@
+Finding graph file: dense01.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 9976
+Computing time = 2.793497 second
+
+Finding graph file: dense02.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 9980
+Computing time = 2.841885 second
+
+Finding graph file: dense03.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 9981
+Computing time = 2.857992 second
+
+Finding graph file: dense04.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 9979
+Computing time = 2.818205 second
+
+Finding graph file: dense05.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 9986
+Computing time = 2.815775 second
+
+Finding graph file: sparse01.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 7945
+Computing time = 0.018256 second
+
+Finding graph file: sparse02.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 8174
+Computing time = 0.018509 second
+
+Finding graph file: sparse03.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 8307
+Computing time = 0.018725 second
+
+Finding graph file: sparse04.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 8053
+Computing time = 0.018065 second
+
+Finding graph file: sparse05.txt 
+The source = 228, target = 3741,  MxST Total edge = 4999
+The maximal bandwidth path's bandwidth = 7906
+Computing time = 0.019746 second
+

@@ -25,26 +25,32 @@
 
 list * edge_list[TOTAL_VERTICES+1]; //
 heap * sort_edge = new heap();
-
+/*
 struct NODE{
-    int v1,v2;
-};
+    int adj_node;
+    int weight;
+};  */
 
 int parent[TOTAL_VERTICES]; // array to track whether new adding edges makes a cycle in MxST
 int rank[TOTAL_VERTICES];   // array to keep track of the cycle deciding trees' depths
 int path[TOTAL_VERTICES];   // array for print out the final max-bandwidth path
-int status[TOTAL_VERTICES]; // status for DFS : 0 = unvisited, 1 = visisted, 2 = finish visiting all childrens
+int status[TOTAL_VERTICES]; // status for DFS : 0 = unvisited(white), 1 = visisted(grey),
+                            //                  2 = finish visiting all childrens (black)
 int edge_count = 0;         // total edge counts in MxST, should be exact 4999
-int max_bandwidth = 0;      // Final max-bandwidth path's bandwidth
+int max_bandwidth = 10000;      // Final max-bandwidth path's bandwidth
+
+int source = 228;
+int target = 3741;
+bool path_found = 0;
 //-----------------------------------------------------
 //---------------**** FUNCTIONS ****-------------------
 //-----------------------------------------------------
 /* Find the root of the given edge's two vertices, tree is for finding cycle not MxST */
-int find_root(int root)
+int find_root(int vertex)
 {
     //printf("Finding roots...\n");
-    int v = root;
-    edge_list[TOTAL_VERTICES] = new list();
+    int v = vertex;
+    edge_list[TOTAL_VERTICES] = new list(); //uses the unused linked list, since vertex from 0 to 4999
     while (parent[v]!=(-1))
     {
         edge_list[TOTAL_VERTICES]->newvertex(v,1);
@@ -131,10 +137,61 @@ void create_maxspan_tree()
         }
     }
 }
-/* Now find the path between the source and target in the MxST */
-void find_path(int _source, int _target)
+/* Depth First Search subroutine */
+void depth_first_search(int v, int parent)
 {
-    
+    status[v] = 1; // color = grey (visited)
+    path[v] = parent;
+    vertices *temp = edge_list[v]->list_head();
+    if(status[target] == 1)
+    {
+        path_found = 1;
+        return;
+    }
+    while(temp!=NULL)
+    {
+        /* if the node's color is white (unvisited), then DFS it */
+        if(status[temp->v_num]==0) depth_first_search(temp->v_num, v);
+        temp = temp->next;
+    }
+    status[v] = 2; // color = black (done visit all its child nodes)
+    //delete edge_list[v];
+    //edge_list[parent]->Delete(v);
+}
+
+/* Find the path between source and target in the MxST by using Depth First Search */
+void find_path()
+{
+    vertices *temp = edge_list[source]->list_head();
+    while(temp!=NULL)
+    {
+        if(status[temp->v_num]==0) depth_first_search(temp->v_num, source);
+        if(path_found) break;
+        temp = temp->next;
+    }
+}
+
+void print_path()
+{
+    bool arrive_source = 0;
+    int v = target;
+    //list * maxpath = new list();
+    while (!arrive_source)
+    {
+        int w = edge_list[v]->find_edge(path[v]);
+        if(w < max_bandwidth) max_bandwidth = w;
+        v = path[v];
+        if(v == source) arrive_source = 1;
+    }
+    /*temp = maxpath->list_tail();
+    printf("Max bandwidth path = ");
+    while(temp!=NULL)
+    {
+        printf("Record finish, printing out...\n");
+        printf("%d\t", temp->v_num);
+        temp = temp->prev;
+    }
+    printf("%d \n", target);*/
 }
 
 //-----------------------------------------------------
@@ -145,7 +202,7 @@ int main(int argc, char *argv[])
     clock_t begin = clock();
     FILE *fp;
     fp = fopen(argv[1], "r");
-    
+
     if(!fp)
     {
         if(argv[2]) printf("Error 01 : file: %s not found\n",argv[2]);
@@ -156,6 +213,8 @@ int main(int argc, char *argv[])
     }
     else
     {
+        //printf("Sorting edges...  ");
+        printf("Finding graph file: %s \n",argv[1]);
         int flag = 0;
         while(flag ==0)
         {
@@ -175,15 +234,13 @@ int main(int argc, char *argv[])
             }
         }
     }
-    printf("Ready to create MxST\n");
+    //printf("Ready to create MxST\n");
     create_maxspan_tree();
     
-    int source = 228;
-    int target = 3741;
-    //find_path(source, target);
+    find_path();
+    print_path();
     
-    printf("Total edge = %d\n", edge_count);
-    printf("The source = %d, target = %d\n", source, target);
+    printf("The source = %d, target = %d,  MxST Total edge = %d\n", source, target, edge_count);
     printf("The maximal bandwidth path's bandwidth = %d\n", max_bandwidth);
     fclose(fp);
     clock_t end = clock();
