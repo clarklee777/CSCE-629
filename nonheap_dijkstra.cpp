@@ -11,12 +11,9 @@
 //--------------**** DEFINES ****---------------------
 //----------------------------------------------------
 
-#ifndef TOTAL_VERTICES
 #define TOTAL_VERTICES 5000
-#endif
 #define INFINTE 10000
 
-//using namespace std;
 //-----------------------------------------------------
 //----------**** DATA STRUCTURES ****------------------
 //-----------------------------------------------------
@@ -210,7 +207,7 @@ int main(int argc, char *argv[])
     //fringe->display_with_weight();
     find_path(source,target);
     
-    
+    printf("Total edge = %d\n", edge_count);
     printf("The source = %d, target = %d\n", source, target);
     printf("The maximal bandwidth path's bandwidth = %d\n", labels[target]);
     fclose(fp);

@@ -7,20 +7,19 @@
 // Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size)
 #include <stdlib.h>
 #include <stdio.h>
-
-#define TOTAL_VERTICES 5000
-
+#ifndef TOTAL_SIZE
+#define TOTAL_SIZE 5000000
+#endif
 struct EDGE{
     int edge_num;
     int edge_weight;
-
 };
 
 class heap{
     
 private:
-    int H[TOTAL_VERTICES]; //heap array
-    int D[TOTAL_VERTICES]; //data array
+    int H[TOTAL_SIZE]; //heap array
+    int D[TOTAL_SIZE]; //data array
     int h_size;            // Returns number of elements in the heap
     /*void change_size(int _size)  // Change the private variable : size of the heap structure
     {
@@ -32,7 +31,7 @@ public:
     heap()
     {
         int i = 0;
-        while (i!=TOTAL_VERTICES)
+        while (i!=TOTAL_SIZE)
         {
             H[i] = 0;
             D[i] = 0;
@@ -92,7 +91,7 @@ public:
     {
         int index = 0;
         
-        for (int i = 1; i<= TOTAL_VERTICES; i++)
+        for (int i = 1; i<= TOTAL_SIZE; i++)
         {
             if (H[i]==_vertice)
             {

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <time.h>
 #include "linked_list.hpp"
-#include "heap.hpp"
+
 
 /* Heap functions are :                                                     */
 /* heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)   */
@@ -18,10 +18,10 @@
 //--------------**** DEFINES ****---------------------
 //----------------------------------------------------
 
-#ifndef TOTAL_VERTICES
 #define TOTAL_VERTICES 5000
-#endif
 #define INFINTE 10000
+#define TOTAL_SIZE 5000
+#include "heap.hpp"
 
 //-----------------------------------------------------
 //----------**** DATA STRUCTURES ****------------------
@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
     */
     
     find_path(source,target);
-    
+    printf("Total edge = %d\n", edge_count);
     printf("The source = %d, target = %d\n", source, target);
     printf("The maximal bandwidth path's bandwidth = %d\n", labels[target]);
     fclose(fp);
