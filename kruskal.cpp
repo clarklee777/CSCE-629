@@ -164,25 +164,30 @@ void find_path()
 
 void print_path()
 {
+    //printf("Printing path...\n");
     bool arrive_source = 0;
     int v = target;
-    //list * maxpath = new list();
+    list * maxpath = new list();
     while (!arrive_source)
     {
         int w = edge_list[v]->find_edge(path[v]);
         if(w < max_bandwidth) max_bandwidth = w;
+        maxpath->newvertex(path[v],1);
         v = path[v];
         if(v == source) arrive_source = 1;
     }
-    /*temp = maxpath->list_tail();
-    printf("Max bandwidth path = ");
+    vertices *temp = maxpath->list_tail();
+    printf("Max bandwidth path = \n");
+    int i = 1;
     while(temp!=NULL)
     {
-        printf("Record finish, printing out...\n");
-        printf("%d\t", temp->v_num);
+        //printf("Record finish, printing out...\n");
+        if(i%10!=0) printf("%d \t", temp->v_num);
+        else printf("%d \n", temp->v_num);
         temp = temp->prev;
+        i++;
     }
-    printf("%d \n", target);*/
+    printf("%d\n", target);
 }
 
 //-----------------------------------------------------
@@ -228,10 +233,10 @@ int main(int argc, char *argv[])
     create_maxspan_tree();
     
     find_path();
-    print_path();
     
     printf("The source = %d, target = %d\n", source, target);
     //printf("MxST Total edge = %d\n", edge_count);
+    print_path();
     printf("The maximal bandwidth path's bandwidth = %d\n", max_bandwidth);
     fclose(fp);
     clock_t end = clock();
