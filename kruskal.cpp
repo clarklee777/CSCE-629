@@ -43,7 +43,6 @@ bool path_found = 0;
 /* Find the root of the given edge's two vertices, tree is for finding cycle not MxST */
 int find_root(int vertex)
 {
-    //printf("Finding roots...\n");
     int v = vertex;
     edge_list[TOTAL_VERTICES] = new list(); //uses the unused linked list, since vertex from 0 to 4999
     while (parent[v]!=(-1))
@@ -68,7 +67,6 @@ int find_root(int vertex)
 /* tree is for finding cycle not MxST                                   */
 void merge_root(int _r1, int _r2)
 {
-    //printf("Merging roots...\n");
     int r1 = _r1;
     int r2 = _r2;
     
@@ -84,7 +82,6 @@ void merge_root(int _r1, int _r2)
 /* Detect whether the given edge's two vertices would make a cycle in MxST */
 bool cycle_detect(int _v1, int _v2)
 {
-    //printf("Dectecting Cycles...\n");
     int v1 = _v1;
     int v2 = _v2;
     int r1 = find_root(v1);
@@ -119,11 +116,10 @@ void create_maxspan_tree()
         w = new_edge.edge_weight;
         v1 = new_edge.edge_num/10000;
         v2 = new_edge.edge_num%10000;
-        //printf("New edge extracted.\n");
+        
         /* If the edge won't make a cycle, add it to the current MxST */
         if(!cycle_detect(v1,v2))
         {
-            //printf("Adding new edge to MxST....\n");
             if(edge_list[v1] == NULL) edge_list[v1] = new list();
             if(edge_list[v2] == NULL) edge_list[v2] = new list();
             edge_list[v1]->newvertex(v2,w);
@@ -150,7 +146,7 @@ void depth_first_search(int v, int parent)
         temp = temp->next;
     }
     status[v] = 2; // color = black (done visit all its child nodes)
-    //delete edge_list[v];
+    //edge_list[v] = NULL;
     //edge_list[parent]->Delete(v);
 }
 
@@ -208,7 +204,6 @@ int main(int argc, char *argv[])
     }
     else
     {
-        //printf("Sorting edges...  ");
         printf("Finding graph file: %s \n",argv[1]);
         int flag = 0;
         while(flag ==0)
@@ -235,7 +230,8 @@ int main(int argc, char *argv[])
     find_path();
     print_path();
     
-    printf("The source = %d, target = %d,  MxST Total edge = %d\n", source, target, edge_count);
+    printf("The source = %d, target = %d\n", source, target);
+    //printf("MxST Total edge = %d\n", edge_count);
     printf("The maximal bandwidth path's bandwidth = %d\n", max_bandwidth);
     fclose(fp);
     clock_t end = clock();

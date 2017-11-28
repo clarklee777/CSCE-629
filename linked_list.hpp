@@ -100,10 +100,24 @@ public:
             if(temp->v_num==vertex_num) break;
             else temp = temp->next;
         }
-        if(temp == head) head = temp->next;
-        if(temp->next!=NULL) temp->next->prev = temp->prev;
-        if(temp->prev!=NULL) temp->prev->next = temp->next;
         
+        if(temp == head)
+        {
+            head = temp->next;
+            temp->next->prev = NULL;
+        }
+        else if(temp == tail)
+        {
+            tail = temp->prev;
+            temp->prev->next = NULL;
+        }
+        else //if(temp->next!=NULL && temp->prev!=NULL)
+        {
+            temp->next->prev = temp->prev;
+            temp->prev->next = temp->next;
+        }
+        //if(temp!=tail && temp->prev!=NULL) temp->prev->next = temp->next;
+        //temp = NULL;
         //delete temp;
     }
     
