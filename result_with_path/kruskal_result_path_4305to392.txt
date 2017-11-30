@@ -1,11 +1,15 @@
 Finding graph file: dense01.txt 
+Graph's Total Edge = 2499993
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	2029 	392
 The maximal bandwidth path's bandwidth = 9993
-Computing time = 2.795157 second
+Computing time = 0.875310 second
 
 Finding graph file: dense02.txt 
+Graph's Total Edge = 2500959
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	351 	3362 	3307 	4251 	591 	424 	4496 	2598 	2220 
@@ -16,9 +20,11 @@ Max bandwidth path =
 2413 	3042 	4900 	3014 	209 	3593 	1350 	4866 	4211 	4294 
 535 	4101 	4320 	392
 The maximal bandwidth path's bandwidth = 9977
-Computing time = 2.791412 second
+Computing time = 0.882377 second
 
 Finding graph file: dense03.txt 
+Graph's Total Edge = 2502163
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	3033 	4247 	3817 	1809 	2029 	3366 	64 	4507 	1371 
@@ -31,9 +37,11 @@ Max bandwidth path =
 435 	687 	4500 	3635 	1520 	1697 	829 	3851 	733 	2317 
 1014 	2701 	1 	152 	1248 	1987 	1379 	4892 	392
 The maximal bandwidth path's bandwidth = 9983
-Computing time = 2.915541 second
+Computing time = 0.938506 second
 
 Finding graph file: dense04.txt 
+Graph's Total Edge = 2501118
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	3502 	2095 	324 	2610 	2633 	4358 	2848 	1403 	3558 
@@ -43,18 +51,22 @@ Max bandwidth path =
 3512 	426 	3897 	3259 	4107 	1294 	3713 	2857 	889 	3153 
 4902 	4229 	392
 The maximal bandwidth path's bandwidth = 9982
-Computing time = 2.950717 second
+Computing time = 0.915030 second
 
 Finding graph file: dense05.txt 
+Graph's Total Edge = 2499648
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	4140 	80 	4873 	2686 	791 	3015 	2575 	2789 	2150 
 2052 	2814 	2905 	3805 	876 	839 	3670 	2590 	525 	2697 
 3911 	2896 	4686 	2918 	392
 The maximal bandwidth path's bandwidth = 9981
-Computing time = 2.761545 second
+Computing time = 0.899642 second
 
 Finding graph file: sparse01.txt 
+Graph's Total Edge = 20151
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	3718 	4251 	3179 	3180 	1676 	3736 	107 	1802 	205 
@@ -63,9 +75,11 @@ Max bandwidth path =
 331 	330 	3364 	3363 	2327 	2326 	4549 	4548 	4547 	924 
 392
 The maximal bandwidth path's bandwidth = 8560
-Computing time = 0.017799 second
+Computing time = 0.018186 second
 
 Finding graph file: sparse02.txt 
+Graph's Total Edge = 19981
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	3814 	3815 	4440 	4606 	3895 	3112 	3111 	4229 	2890 
@@ -73,9 +87,11 @@ Max bandwidth path =
 2900 	2899 	2898 	3922 	3340 	387 	1816 	3375 	161 	2827 
 393 	2419 	3566 	3565 	303 	392
 The maximal bandwidth path's bandwidth = 6222
-Computing time = 0.018985 second
+Computing time = 0.019993 second
 
 Finding graph file: sparse03.txt 
+Graph's Total Edge = 20028
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	1729 	4211 	1984 	3623 	4091 	4092 	328 	3866 	1258 
@@ -83,9 +99,11 @@ Max bandwidth path =
 484 	3798 	3402 	2357 	641 	2095 	3488 	2083 	4075 	2156 
 2097 	428 	736 	2891 	1507 	4582 	3953 	343 	392
 The maximal bandwidth path's bandwidth = 6559
-Computing time = 0.018672 second
+Computing time = 0.019223 second
 
 Finding graph file: sparse04.txt 
+Graph's Total Edge = 20060
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	3136 	3135 	907 	582 	624 	623 	793 	712 	711 
@@ -98,6 +116,8 @@ The maximal bandwidth path's bandwidth = 4038
 Computing time = 0.018638 second
 
 Finding graph file: sparse05.txt 
+Graph's Total Edge = 20144
+Kruskal's MxST Total Edge = 4999
 The source = 4305, target = 392
 Max bandwidth path = 
 4305 	2890 	1062 	1061 	2758 	2526 	3487 	1239 	1725 	783 
@@ -109,5 +129,5 @@ Max bandwidth path =
 820 	2268 	2855 	1419 	4936 	4495 	2461 	560 	728 	3617 
 4772 	4773 	391 	392
 The maximal bandwidth path's bandwidth = 4679
-Computing time = 0.018993 second
+Computing time = 0.018935 second
 

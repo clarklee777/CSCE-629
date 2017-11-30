@@ -132,6 +132,9 @@ void create_maxspan_tree()
             edge_list[v1]->newvertex(v2,w);
             edge_list[v2]->newvertex(v1,w);
             edge_count++;
+            /* Since it's a tree, there should only be : # of edges = total # of vertices -1 */
+            /* No need to extract all edges (20k~2.5M) in the heap, only TOTAL_VERTICES (5k) */
+            if(edge_count==TOTAL_VERTICES-1) break;
         }
     }
 }
@@ -203,7 +206,7 @@ void print_path()
 int main(int argc, char *argv[])
 {
     clock_t begin = clock();
-    int edge_count = 0;
+    int graph_edge_count = 0;
     FILE *fp;
     fp = fopen(argv[1], "r");
     /* Graph file reading */
@@ -234,7 +237,7 @@ int main(int argc, char *argv[])
                 if(v1<v2) edge = v1*10000 + v2;
                 else edge = v2*10000 + v1;
                 sort_edge->Insert(edge, w);
-                edge_count++;
+                graph_edge_count++;
             }
         }
     }
@@ -243,7 +246,7 @@ int main(int argc, char *argv[])
     find_path();
     
     
-    printf("Graph's Total Edge = %d\n", edge_count);
+    printf("Graph's Total Edge = %d\n", graph_edge_count);
     printf("Kruskal's MxST Total Edge = %d\n", edge_count);
     printf("The source = %d, target = %d\n", source, target);
     print_path();
