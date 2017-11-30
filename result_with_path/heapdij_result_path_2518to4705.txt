@@ -1,0 +1,114 @@
+Finding graph file: dense01.txt 
+Graph's Total Edge = 2499993
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	4351 	1740 	1116 	3019 	1107 	2937 	2048 	4705
+The maximal bandwidth path's bandwidth = 9991
+Computing time = 1.247890 second
+
+Finding graph file: dense02.txt 
+Graph's Total Edge = 2500959
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	1059 	903 	3144 	3216 	2755 	377 	618 	3440 	1578 
+487 	1192 	933 	1178 	625 	973 	2868 	3926 	3713 	2877 
+4836 	2620 	1670 	3499 	4531 	1933 	3128 	1811 	3844 	3345 
+4526 	3770 	3747 	1539 	4132 	1239 	1234 	1038 	3225 	3906 
+2253 	428 	3306 	2257 	3793 	3725 	1193 	1850 	4139 	4705
+The maximal bandwidth path's bandwidth = 9988
+Computing time = 1.385627 second
+
+Finding graph file: dense03.txt 
+Graph's Total Edge = 2502163
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	1120 	4214 	4944 	2203 	3578 	4402 	3690 	2073 	3671 
+3887 	4851 	4878 	2803 	3513 	230 	2495 	3835 	1306 	637 
+2740 	3926 	688 	1287 	2531 	3814 	293 	4792 	3047 	4596 
+4091 	1111 	4690 	4705
+The maximal bandwidth path's bandwidth = 9985
+Computing time = 1.460094 second
+
+Finding graph file: dense04.txt 
+Graph's Total Edge = 2501118
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	1866 	4864 	2099 	3640 	319 	3958 	4624 	3685 	1679 
+3968 	4672 	2732 	2201 	4854 	205 	3365 	2950 	4066 	3010 
+1087 	766 	2626 	1749 	3512 	426 	3897 	3259 	4344 	1706 
+4033 	4739 	3827 	3424 	3690 	2512 	4029 	2778 	2937 	2799 
+1456 	204 	2398 	4121 	1100 	4485 	3525 	1041 	2107 	4705
+The maximal bandwidth path's bandwidth = 9984
+Computing time = 1.534169 second
+
+Finding graph file: dense05.txt 
+Graph's Total Edge = 2499648
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	3399 	4922 	2727 	2600 	4357 	2993 	4025 	4980 	850 
+1180 	946 	1374 	3050 	3482 	1784 	1111 	789 	2716 	2228 
+4338 	1092 	3905 	3261 	51 	4454 	4360 	3470 	1323 	33 
+1277 	3676 	2543 	4569 	1384 	1606 	3345 	177 	550 	4378 
+617 	1379 	1751 	1363 	760 	22 	3416 	3200 	4456 	1867 
+632 	2837 	1099 	2900 	4673 	4994 	3973 	1397 	640 	4399 
+3588 	6 	3219 	3118 	1013 	764 	3013 	4705
+The maximal bandwidth path's bandwidth = 9985
+Computing time = 1.454179 second
+
+Finding graph file: sparse01.txt 
+Graph's Total Edge = 20151
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	2414 	1334 	503 	2923 	1612 	728 	4732 	3871 	1964 
+3210 	3149 	1055 	100 	2180 	4128 	459 	1280 	1279 	1587 
+4547 	3637 	3636 	3359 	3201 	3627 	4340 	1056 	1057 	4149 
+4148 	638 	1714 	4673 	4173 	1511 	1913 	1914 	1915 	2914 
+2554 	4733 	4704 	4705
+The maximal bandwidth path's bandwidth = 6267
+Computing time = 0.015733 second
+
+Finding graph file: sparse02.txt 
+Graph's Total Edge = 19981
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	2967 	2968 	2969 	2970 	2040 	2039 	3122 	3123 	492 
+3073 	3074 	3571 	4380 	4379 	3365 	3402 	2274 	3205 	3300 
+3705 	721 	1260 	1259 	4342 	4704 	4705
+The maximal bandwidth path's bandwidth = 8558
+Computing time = 0.010683 second
+
+Finding graph file: sparse03.txt 
+Graph's Total Edge = 20028
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	4706 	3990 	2934 	2153 	2784 	2785 	2138 	3841 	3842 
+3636 	3635 	33 	242 	666 	3889 	2647 	4402 	295 	942 
+943 	328 	4092 	4091 	4583 	2104 	4804 	4756 	2050 	2049 
+2596 	3359 	3911 	1298 	2573 	2482 	2371 	4086 	4085 	4974 
+4975 	644 	2570 	2571 	4705
+The maximal bandwidth path's bandwidth = 8605
+Computing time = 0.010487 second
+
+Finding graph file: sparse04.txt 
+Graph's Total Edge = 20060
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	211 	4775 	4774 	4773 	3153 	3154 	1694 	3451 	4151 
+3998 	2425 	2424 	1453 	1468 	2450 	1358 	1359 	3739 	2100 
+4625 	4461 	3360 	3366 	865 	864 	2603 	1150 	1149 	136 
+1736 	3309 	73 	2534 	3246 	1202 	3181 	3180 	3179 	4519 
+4520 	2074 	4440 	478 	4178 	3742 	3741 	4632 	4631 	2789 
+4704 	4705
+The maximal bandwidth path's bandwidth = 8480
+Computing time = 0.015234 second
+
+Finding graph file: sparse05.txt 
+Graph's Total Edge = 20144
+The source = 2518, target = 4705
+Max Bandwidth Path = 
+2518 	2517 	3300 	1132 	1985 	1984 	1182 	4382 	4383 	1713 
+1783 	3538 	3247 	3824 	3825 	1369 	1370 	2714 	2713 	568 
+567 	1986 	1601 	1602 	1127 	1128 	4429 	4705
+The maximal bandwidth path's bandwidth = 8085
+Computing time = 0.032711 second
+

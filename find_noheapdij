@@ -9,4 +9,3 @@ g++ -o noheapdij nonheap_dijkstra.cpp
 ./noheapdij sparse03.txt >> noheapdij_result.txt
 ./noheapdij sparse04.txt >> noheapdij_result.txt
 ./noheapdij sparse05.txt >> noheapdij_result.txt
-vi noheapdij_result.txt

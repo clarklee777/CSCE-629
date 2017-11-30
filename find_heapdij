@@ -9,4 +9,3 @@ g++ -o heapdij heap_dijkstra.cpp
 ./heapdij sparse03.txt >> heapdij_result.txt
 ./heapdij sparse04.txt >> heapdij_result.txt
 ./heapdij sparse05.txt >> heapdij_result.txt
-vi heapdij_result.txt

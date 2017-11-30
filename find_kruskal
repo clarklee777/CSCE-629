@@ -9,4 +9,3 @@ g++ -o kruskal kruskal.cpp
 ./kruskal sparse03.txt >> kruskal_result.txt
 ./kruskal sparse04.txt >> kruskal_result.txt
 ./kruskal sparse05.txt >> kruskal_result.txt
-vi kruskal_result.txt

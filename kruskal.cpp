@@ -41,8 +41,8 @@ int status[TOTAL_VERTICES]; // status for DFS : 0 = unvisited(white), 1 = visist
 int edge_count = 0;         // total edge counts in MxST, should be exact 4999
 int max_bandwidth = 10000;  // Final max-bandwidth path's bandwidth comparator for finding path
 
-int source = 4305;
-int target = 392;
+int source = 2518;
+int target = 4705;
 bool path_found = 0;
 //-----------------------------------------------------
 //---------------**** FUNCTIONS ****-------------------
