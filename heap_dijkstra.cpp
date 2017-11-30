@@ -1,5 +1,13 @@
 /* Dijkstra's Algorithm using heap structure to store fringe queue to solve max-bandwidth path */
 /* The implementation of Dijsktra Algorithm without using heap structure for fringes */
+/*
+    Dijkstra's Algorithm using heap structure to store fringe queue to solve max-bandwidth path
+    The implementation of Dijsktra Algorithm without using heap structure for fringes
+ 
+    File:   heap_dijkstra.cpp
+    Author: Ho Lee
+    Date  : 2017/11
+ */
 //---------------------------------------------------
 //            **** INCLUDES ****
 //---------------------------------------------------
@@ -27,13 +35,12 @@
 //----------**** DATA STRUCTURES ****------------------
 //-----------------------------------------------------
 
-list * edge_list[TOTAL_VERTICES+1];
-heap * fringe = new heap();
-//list * fringe = new list();
+list * edge_list[TOTAL_VERTICES+1]; // Whole graph's edges are stored here index by each vertex number
+heap * fringe = new heap();         // The heap to store fringes for faster extract max
 
 int status[TOTAL_VERTICES]; // status : 1 = unseen / 2 = fringe / 3 = in-tree
-int labels[TOTAL_VERTICES];
-int parent[TOTAL_VERTICES];
+int labels[TOTAL_VERTICES]; // each verteices's label of current max_bandwidth from source to the vertex
+int parent[TOTAL_VERTICES]; // array to keep track of the parent-child relations along the path
 
 //-----------------------------------------------------
 //---------------**** FUNCTIONS ****-------------------
@@ -52,6 +59,7 @@ void print_linked_list(int _edge_count)
     printf("Total %d edges.\n", _edge_count);
 }
 
+/* Initialize the critical contents needed */
 void initialize_graph(int _source)
 {
     /* Initialize the graph vertices : label = infinite, status = 1 (unseen) */
@@ -80,6 +88,7 @@ void initialize_graph(int _source)
     }
 }
 
+/* The Dijkstra's Algorithm main frame, uses max-heap to store fringes for faster extract max */
 void find_path(int _source, int _target)
 {
     int source = _source;
@@ -131,17 +140,39 @@ void find_path(int _source, int _target)
         }
     }
 }
+/* Print out the found max-bandwidth path */
+void printf_path(int _source, int _target)
+{
+    int temp = _target;
+    list * print = new list();
+    printf("Max Bandwidth Path = \n");
+    while(temp!=_source)
+    {
+        temp = parent[temp];
+        print->newvertex(temp,1);
+    }
+    int i = 1;
+    vertices *max_path = print->list_tail();
+    while(max_path!=NULL)
+    {
+        if(i%10!=0) printf("%d \t", max_path->v_num);
+        else printf("%d \n", max_path->v_num);
+        max_path = max_path->prev;
+        i++;
+    }
+    printf("%d\n", _target);
+}
 //-----------------------------------------------------
 //---------------**** MAIN FCT ****--------------------
 //-----------------------------------------------------
 int main(int argc, char *argv[])
 {
     clock_t begin = clock();
-    srand(time(NULL));
+    //srand(time(NULL));
     int edge_count = 0;
     FILE *fp;
     fp = fopen(argv[1], "r");
-    
+    /* File reading part */
     if(!fp)
     {
         if(argv[2]) printf("Error 01 : file: %s not found\n",argv[2]);
@@ -185,20 +216,12 @@ int main(int argc, char *argv[])
     int target = 3741;
     
     initialize_graph(source);
-    /*
-    printf("The fringe list :\n");
-    fringe->display_heap();
-    //find_path(source,target);
-    EDGE mfringe = fringe->extract_max();
-    printf("The max label fringe = %d,  weight = %d\n", mfringe.edge_num, mfringe.edge_weight);
-    
-    printf("The fringe list after extract max :\n");
-    fringe->display_heap();
-    */
     
     find_path(source,target);
-    printf("Total edge = %d\n", edge_count);
+    
+    printf("Graph's Total Edge = %d\n", edge_count);
     printf("The source = %d, target = %d\n", source, target);
+    printf_path(source,target);
     printf("The maximal bandwidth path's bandwidth = %d\n", labels[target]);
     fclose(fp);
     clock_t end = clock();

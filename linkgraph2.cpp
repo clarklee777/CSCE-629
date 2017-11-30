@@ -1,5 +1,11 @@
-/* Using linked list for random generating graphs */
-/* Graph2 : each vertex is adjacent to 20% of other vertices (Degree = 500) */
+/*
+    Singly Linked list data structure to generate a random graph
+    Graph2 : each vertex is adjacent to 20% of other vertices (Degree = 500)
+ 
+    File:   linkgraph2.cpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 #include "linkgraph.hpp"
 
 #define TOTAL_VERTICES 5000

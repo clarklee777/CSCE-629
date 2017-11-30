@@ -1,0 +1,133 @@
+Finding graph file: dense01.txt 
+Graph's Total Edge = 2499993
+Kruskal's MxST Total Edge = 2499993
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	2029 	392
+The maximal bandwidth path's bandwidth = 9993
+Computing time = 2.876007 second
+
+Finding graph file: dense02.txt 
+Graph's Total Edge = 2500959
+Kruskal's MxST Total Edge = 2500959
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	351 	3362 	3307 	4251 	591 	424 	4496 	2598 	2220 
+650 	623 	1368 	865 	4988 	3723 	2327 	4092 	2485 	873 
+2440 	3759 	791 	1328 	1157 	2776 	4052 	2380 	3663 	2438 
+4782 	4836 	2620 	1670 	3499 	1860 	4130 	2612 	3096 	4536 
+45 	77 	370 	2513 	2886 	3751 	288 	1620 	3425 	1729 
+2413 	3042 	4900 	3014 	209 	3593 	1350 	4866 	4211 	4294 
+535 	4101 	4320 	392
+The maximal bandwidth path's bandwidth = 9977
+Computing time = 2.880114 second
+
+Finding graph file: dense03.txt 
+Graph's Total Edge = 2502163
+Kruskal's MxST Total Edge = 2502163
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	3033 	4247 	3817 	1809 	2029 	3366 	64 	4507 	1371 
+2246 	4367 	1624 	988 	2079 	4864 	1775 	1139 	2140 	4227 
+1954 	4173 	3632 	3582 	3049 	1596 	1971 	3699 	3739 	596 
+1071 	4690 	162 	2144 	4125 	1544 	4874 	4826 	1345 	3814 
+48 	3810 	2704 	4995 	1233 	112 	3556 	2441 	1211 	3707 
+4467 	1060 	2561 	1941 	3549 	1916 	4972 	1169 	2100 	659 
+1046 	2195 	4816 	1224 	341 	4275 	3849 	2154 	822 	2346 
+435 	687 	4500 	3635 	1520 	1697 	829 	3851 	733 	2317 
+1014 	2701 	1 	152 	1248 	1987 	1379 	4892 	392
+The maximal bandwidth path's bandwidth = 9983
+Computing time = 2.809445 second
+
+Finding graph file: dense04.txt 
+Graph's Total Edge = 2501118
+Kruskal's MxST Total Edge = 2501118
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	3502 	2095 	324 	2610 	2633 	4358 	2848 	1403 	3558 
+1197 	1063 	2658 	3128 	3961 	2648 	1784 	4956 	1048 	469 
+2049 	3147 	4245 	4217 	4241 	1949 	3211 	4056 	3219 	4160 
+4562 	1254 	3365 	2950 	4066 	3010 	1087 	766 	2626 	1749 
+3512 	426 	3897 	3259 	4107 	1294 	3713 	2857 	889 	3153 
+4902 	4229 	392
+The maximal bandwidth path's bandwidth = 9982
+Computing time = 2.977939 second
+
+Finding graph file: dense05.txt 
+Graph's Total Edge = 2499648
+Kruskal's MxST Total Edge = 2499648
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	4140 	80 	4873 	2686 	791 	3015 	2575 	2789 	2150 
+2052 	2814 	2905 	3805 	876 	839 	3670 	2590 	525 	2697 
+3911 	2896 	4686 	2918 	392
+The maximal bandwidth path's bandwidth = 9981
+Computing time = 2.871839 second
+
+Finding graph file: sparse01.txt 
+Graph's Total Edge = 20151
+Kruskal's MxST Total Edge = 20151
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	3718 	4251 	3179 	3180 	1676 	3736 	107 	1802 	205 
+619 	3881 	2807 	1577 	1128 	4879 	4878 	4922 	4996 	3682 
+4697 	4698 	4607 	4267 	618 	4892 	3666 	163 	4400 	1747 
+331 	330 	3364 	3363 	2327 	2326 	4549 	4548 	4547 	924 
+392
+The maximal bandwidth path's bandwidth = 8560
+Computing time = 0.019454 second
+
+Finding graph file: sparse02.txt 
+Graph's Total Edge = 19981
+Kruskal's MxST Total Edge = 19981
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	3814 	3815 	4440 	4606 	3895 	3112 	3111 	4229 	2890 
+4144 	1450 	4575 	3958 	3957 	3612 	3613 	2797 	2796 	3878 
+2900 	2899 	2898 	3922 	3340 	387 	1816 	3375 	161 	2827 
+393 	2419 	3566 	3565 	303 	392
+The maximal bandwidth path's bandwidth = 6222
+Computing time = 0.018614 second
+
+Finding graph file: sparse03.txt 
+Graph's Total Edge = 20028
+Kruskal's MxST Total Edge = 20028
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	1729 	4211 	1984 	3623 	4091 	4092 	328 	3866 	1258 
+402 	3734 	4703 	3320 	4303 	3780 	249 	795 	794 	793 
+484 	3798 	3402 	2357 	641 	2095 	3488 	2083 	4075 	2156 
+2097 	428 	736 	2891 	1507 	4582 	3953 	343 	392
+The maximal bandwidth path's bandwidth = 6559
+Computing time = 0.018753 second
+
+Finding graph file: sparse04.txt 
+Graph's Total Edge = 20060
+Kruskal's MxST Total Edge = 20060
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	3136 	3135 	907 	582 	624 	623 	793 	712 	711 
+1315 	1547 	1118 	976 	127 	4548 	1247 	958 	959 	4466 
+2824 	2823 	2822 	2398 	4461 	3360 	3366 	865 	864 	2603 
+1150 	1149 	136 	1736 	3309 	73 	2534 	3246 	1202 	3181 
+3180 	3179 	4519 	4520 	2074 	4440 	478 	4178 	3742 	3741 
+4632 	4631 	2789 	4353 	392
+The maximal bandwidth path's bandwidth = 4038
+Computing time = 0.019194 second
+
+Finding graph file: sparse05.txt 
+Graph's Total Edge = 20144
+Kruskal's MxST Total Edge = 20144
+The source = 4305, target = 392
+Max bandwidth path = 
+4305 	2890 	1062 	1061 	2758 	2526 	3487 	1239 	1725 	783 
+807 	808 	3169 	4884 	4883 	3895 	3896 	2099 	2603 	185 
+2363 	685 	2137 	2254 	2543 	918 	3007 	4015 	1158 	4575 
+4576 	878 	3203 	2012 	3072 	2171 	201 	1629 	187 	1696 
+3109 	3108 	1211 	361 	3574 	3832 	3251 	3252 	3579 	1551 
+4906 	4907 	2991 	3690 	3689 	2306 	2305 	4964 	2799 	1914 
+820 	2268 	2855 	1419 	4936 	4495 	2461 	560 	728 	3617 
+4772 	4773 	391 	392
+The maximal bandwidth path's bandwidth = 4679
+Computing time = 0.018764 second
+

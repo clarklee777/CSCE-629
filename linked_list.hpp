@@ -1,14 +1,20 @@
-/* Linked list data structure header for Dijkstra's max-bandwidth path */
-/* Header file to declare functions for random generate graph1 */
+/*
+    Doubly Linked list data structure to store graph's data
+    The header file declares and describes class functions of doubly linked list
+ 
+    File:   linked_list.hpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 
 #include <stdlib.h>
 #include <stdio.h>
 
 struct vertices{
     vertices *next; //pointed to the next vertex in the linked list
-    vertices *prev;
+    vertices *prev; //pointed to the previous vertex in the linked list
     int v_num;      //the vertex number
-    int weight;
+    int weight;     //the vertex's weight
 };
 
 class list{

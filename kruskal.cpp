@@ -1,4 +1,11 @@
-/* Kruskal's algorithm for max-bandwifth path */
+/*
+    Kruskal's Maximal Spanning Tree algorithm for max-bandwifth path.
+    Utilizes a max-heap to sort the original graph's edges for max extraction
+ 
+    File:   kruskal.cpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 //---------------------------------------------------
 //            **** INCLUDES ****
 //---------------------------------------------------
@@ -23,8 +30,8 @@
 //----------**** DATA STRUCTURES ****------------------
 //-----------------------------------------------------
 
-list * edge_list[TOTAL_VERTICES+1]; //
-heap * sort_edge = new heap();
+list * edge_list[TOTAL_VERTICES+1]; // Whole graph's edges are stored here index by each vertex number
+heap * sort_edge = new heap();      // The sorted edge in increasing fasion for Kruskal's MxST
 
 int parent[TOTAL_VERTICES]; // array to track whether new adding edges makes a cycle in MxST
 int rank[TOTAL_VERTICES];   // array to keep track of the cycle deciding trees' depths
@@ -32,7 +39,7 @@ int path[TOTAL_VERTICES];   // array for print out the final max-bandwidth path
 int status[TOTAL_VERTICES]; // status for DFS : 0 = unvisited(white), 1 = visisted(grey),
                             //                  2 = finish visiting all childrens (black)
 int edge_count = 0;         // total edge counts in MxST, should be exact 4999
-int max_bandwidth = 10000;      // Final max-bandwidth path's bandwidth
+int max_bandwidth = 10000;  // Final max-bandwidth path's bandwidth comparator for finding path
 
 int source = 4305;
 int target = 392;
@@ -97,7 +104,7 @@ bool cycle_detect(int _v1, int _v2)
         return false;
     }
 }
-/* Create the maximal spanning tree by using Kruskals' algorithm */
+/* Create the Maximal Spanning Tree by using Kruskals' algorithm */
 void create_maxspan_tree()
 {
     /* MakeSet() : Initialize the information arrays for deciding cycle existance */
@@ -161,7 +168,7 @@ void find_path()
         temp = temp->next;
     }
 }
-
+/* Print out the found max-bandwidth path */
 void print_path()
 {
     //printf("Printing path...\n");
@@ -196,9 +203,10 @@ void print_path()
 int main(int argc, char *argv[])
 {
     clock_t begin = clock();
+    int edge_count = 0;
     FILE *fp;
     fp = fopen(argv[1], "r");
-
+    /* Graph file reading */
     if(!fp)
     {
         if(argv[2]) printf("Error 01 : file: %s not found\n",argv[2]);
@@ -226,16 +234,18 @@ int main(int argc, char *argv[])
                 if(v1<v2) edge = v1*10000 + v2;
                 else edge = v2*10000 + v1;
                 sort_edge->Insert(edge, w);
+                edge_count++;
             }
         }
     }
     //printf("Ready to create MxST\n");
     create_maxspan_tree();
-    
     find_path();
     
+    
+    printf("Graph's Total Edge = %d\n", edge_count);
+    printf("Kruskal's MxST Total Edge = %d\n", edge_count);
     printf("The source = %d, target = %d\n", source, target);
-    //printf("MxST Total edge = %d\n", edge_count);
     print_path();
     printf("The maximal bandwidth path's bandwidth = %d\n", max_bandwidth);
     fclose(fp);

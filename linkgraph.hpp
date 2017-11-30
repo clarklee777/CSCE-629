@@ -1,5 +1,11 @@
-/* Header file to declare functions for random generate graph1 */
-
+/*
+    Singly Linked list data structure to generate a random graph
+    The header file declares and describes class functions of singly linked list
+ 
+    File:   linked_list.hpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -7,12 +13,12 @@
 struct vertices{
     vertices *next; //pointed to the next vertex in the linked list
     int v_num;      //the vertex number
-    int weight;
+    int weight;     //the vertex's weight
 };
 
 class list{
 private:
-    vertices *head, *tail;
+    vertices *head, *tail;  //pointers pointed to the list's head and tail node
     
 public:
     /* Initialize the list */

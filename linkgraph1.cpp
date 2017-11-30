@@ -1,5 +1,11 @@
-/* Using linked list for random generating graphs */
-/* Graph1 : have average vertex degree = 8, E = 4N */
+/*
+    Singly Linked list data structure to generate a random graph
+    Graph1 : have average vertex degree = 8, E = 4N
+ 
+    File:   linkgraph1.cpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 #include "linkgraph.hpp"
 
 #define TOTAL_VERTICES 5000

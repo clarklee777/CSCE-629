@@ -1,7 +1,12 @@
-// Create by : Ho Lee
-// Date      : 2017/11/25
+/*
+    Utilizes a max-heap to store the graph's edges for max extraction
+    The header file declares and describes class functions of max-heap class
+ 
+    File:   heap.hpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 
-/* The header file for declaration of max-heap class */
 // Heap functions are :
 // heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)
 // Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size)
@@ -20,11 +25,7 @@ class heap{
 private:
     int H[TOTAL_SIZE]; //heap array
     int D[TOTAL_SIZE]; //data array
-    int h_size;            // Returns number of elements in the heap
-    /*void change_size(int _size)  // Change the private variable : size of the heap structure
-    {
-        h_size = _size;
-    }*/
+    int h_size;        // Returns number of elements in the heap
     
 public:
     /* Class initializer */

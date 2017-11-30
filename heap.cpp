@@ -1,3 +1,11 @@
+/*
+    Utilizes a max-heap to store the graph's edges
+    This file is for verification of the heap class functionalities
+ 
+    File:   heap.hpp
+    Author: Ho Lee
+    Date  : 2017/11
+*/
 #include "heap.hpp"
 // Heap functions are :
 // heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)
