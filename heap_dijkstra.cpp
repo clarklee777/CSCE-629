@@ -1,5 +1,3 @@
-/* Dijkstra's Algorithm using heap structure to store fringe queue to solve max-bandwidth path */
-/* The implementation of Dijsktra Algorithm without using heap structure for fringes */
 /*
     Dijkstra's Algorithm using heap structure to store fringe queue to solve max-bandwidth path
     The implementation of Dijsktra Algorithm without using heap structure for fringes
@@ -16,11 +14,6 @@
 #include <iostream>
 #include <time.h>
 #include "linked_list.hpp"
-
-
-/* Heap functions are :                                                     */
-/* heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)   */
-/* Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size) */
 
 //----------------------------------------------------
 //--------------**** DEFINES ****---------------------
@@ -168,7 +161,6 @@ void printf_path(int _source, int _target)
 int main(int argc, char *argv[])
 {
     clock_t begin = clock();
-    //srand(time(NULL));
     int edge_count = 0;
     FILE *fp;
     fp = fopen(argv[1], "r");
@@ -196,9 +188,6 @@ int main(int argc, char *argv[])
             }
             else
             {
-                /* Make the edge name XX_YY, XX is the small vertex number while YY is larger */
-                //if(v1<v2) edge = v1*100 + v2;
-                //else edge = v2*100 + v1;
                 if(edge_list[v1] == NULL) edge_list[v1] = new list();
                 if(edge_list[v2] == NULL) edge_list[v2] = new list();
                 edge_list[v1]->newvertex(v2,w);
@@ -210,8 +199,7 @@ int main(int argc, char *argv[])
     //print_linked_list(edge_count);
     
     /* Initialize the graph */
-    //int source = rand()%4999;
-    //int target = rand()%4999;
+
     int source = 2518;
     int target = 4705;
     

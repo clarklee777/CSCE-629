@@ -16,9 +16,6 @@ int main()
     int random;
     int i, j, k, l;
     int edge_count=0;
-    //struct vertices *vertex;
-    
-    //vertex = (struct vertices *)malloc(sizeof(struct vertices)*TOTAL_VERTICES);
     
     FILE *fp;
     fp = fopen("graph2.txt", "w");
@@ -48,9 +45,6 @@ int main()
         {
             linked_list[i] = new list();
             linked_list[i]->newvertex(i-1);
-            //random = rand()%9999 +1;
-            //fprintf(fp, "%d %d %d\n", i, i+1, random);
-            //edge_count++;
         }
     }
     printf("Connected edges uses %d.\n", edge_count);
@@ -61,7 +55,7 @@ int main()
             random = rand()%9999 +1;
             if(random<1055)
             {
-                if((linked_list[j]->find_edge(k)==0)/*&&(linked_list[k]->find_edge(j)==0)*/&&(j!=k))
+                if((linked_list[j]->find_edge(k)==0)&&(j!=k))
                 {
                     linked_list[j]->newvertex(k);
                     linked_list[k]->newvertex(j);
@@ -86,7 +80,6 @@ int main()
     }
     */
     printf("Total %d edges.\n", edge_count);
-    //free(vertex);
     fclose(fp);
     return 0;
 }

@@ -1,0 +1,180 @@
+Finding graph file: graphS2k.txt 
+Graph's Total Edge = 7939
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 7920
+Computing time = 0.017437 second
+
+Finding graph file: graphS2k.txt 
+Graph's Total Edge = 7939
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 7920
+Computing time = 0.008268 second
+
+Finding graph file: graphS2k.txt 
+Graph's Total Edge = 7939
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 7920
+Computing time = 0.006974 second
+
+Finding graph file: graphS4k.txt 
+Graph's Total Edge = 16000
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 8187
+Computing time = 0.020246 second
+
+Finding graph file: graphS4k.txt 
+Graph's Total Edge = 16000
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 8187
+Computing time = 0.017256 second
+
+Finding graph file: graphS4k.txt 
+Graph's Total Edge = 16000
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 8187
+Computing time = 0.014572 second
+
+Finding graph file: graphS6k.txt 
+Graph's Total Edge = 23937
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 8290
+Computing time = 0.025346 second
+
+Finding graph file: graphS6k.txt 
+Graph's Total Edge = 23937
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 8290
+Computing time = 0.013636 second
+
+Finding graph file: graphS6k.txt 
+Graph's Total Edge = 23937
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 8290
+Computing time = 0.024468 second
+
+Finding graph file: graphS8k.txt 
+Graph's Total Edge = 32530
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 6682
+Computing time = 0.140349 second
+
+Finding graph file: graphS8k.txt 
+Graph's Total Edge = 32530
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 6682
+Computing time = 0.042034 second
+
+Finding graph file: graphS8k.txt 
+Graph's Total Edge = 32530
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 6682
+Computing time = 0.031565 second
+
+Finding graph file: graphS10k.txt 
+Graph's Total Edge = 39768
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 7686
+Computing time = 0.212762 second
+
+Finding graph file: graphS10k.txt 
+Graph's Total Edge = 39768
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 7686
+Computing time = 0.096110 second
+
+Finding graph file: graphS10k.txt 
+Graph's Total Edge = 39768
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 7686
+Computing time = 0.049913 second
+
+Finding graph file: graphD2k.txt 
+Graph's Total Edge = 398803
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 9962
+Computing time = 0.235572 second
+
+Finding graph file: graphD2k.txt 
+Graph's Total Edge = 398803
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 9962
+Computing time = 0.242478 second
+
+Finding graph file: graphD2k.txt 
+Graph's Total Edge = 398803
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 9962
+Computing time = 0.151873 second
+
+Finding graph file: graphD4k.txt 
+Graph's Total Edge = 1592301
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 9950
+Computing time = 0.929612 second
+
+Finding graph file: graphD4k.txt 
+Graph's Total Edge = 1592301
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 9950
+Computing time = 0.996396 second
+
+Finding graph file: graphD4k.txt 
+Graph's Total Edge = 1592301
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 9950
+Computing time = 0.564580 second
+
+Finding graph file: graphD6k.txt 
+Graph's Total Edge = 3582564
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 9988
+Computing time = 2.033149 second
+
+Finding graph file: graphD6k.txt 
+Graph's Total Edge = 3582564
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 9988
+Computing time = 2.033811 second
+
+Finding graph file: graphD6k.txt 
+Graph's Total Edge = 3582564
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 9988
+Computing time = 1.245757 second
+
+Finding graph file: graphD8k.txt 
+Graph's Total Edge = 6366100
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 9991
+Computing time = 3.519929 second
+
+Finding graph file: graphD8k.txt 
+Graph's Total Edge = 6366100
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 9991
+Computing time = 3.989361 second
+
+Finding graph file: graphD8k.txt 
+Graph's Total Edge = 6366100
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 9991
+Computing time = 2.203421 second
+
+Finding graph file: graphD10k.txt 
+Graph's Total Edge = 9949323
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 6.887486 second
+
+Finding graph file: graphD10k.txt 
+Graph's Total Edge = 9949323
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 6.571589 second
+
+Finding graph file: graphD10k.txt 
+Graph's Total Edge = 9949323
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 3.428256 second
+

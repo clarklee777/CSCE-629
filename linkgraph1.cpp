@@ -16,12 +16,9 @@ int main()
     int random;
     int i, j, k, l;
     int edge_count=0;
-    //struct vertices *vertex;
-    
-    //vertex = (struct vertices *)malloc(sizeof(struct vertices)*TOTAL_VERTICES);
     
     FILE *fp;
-    fp = fopen("graph1.txt", "w");
+    fp = fopen("sparse.txt", "w");
     srand(time(NULL));              //start the random seed
     
     /* Initialize the linked list array and the whole graph connected first */
@@ -48,12 +45,9 @@ int main()
         {
             linked_list[i] = new list();
             linked_list[i]->newvertex(i-1);
-            //random = rand()%9999 +1;
-            //fprintf(fp, "%d %d %d\n", i, i+1, random);
-            //edge_count++;
         }
     }
-    printf("Connected edges uses %d.\n", edge_count);
+    //printf("Connected edges uses %d.\n", edge_count);
     for(j=0; j<TOTAL_VERTICES; j++)
     {
         for(k=0; k<TOTAL_VERTICES; k++)
@@ -61,7 +55,7 @@ int main()
             random = rand()%9999 +1;
             if(random<7)
             {
-                if((linked_list[j]->find_edge(k)==0)/*&&(linked_list[k]->find_edge(j)==0)*/&&(j!=k))
+                if((linked_list[j]->find_edge(k)==0)&&(j!=k))
                 {
                     linked_list[j]->newvertex(k);
                     linked_list[k]->newvertex(j);
@@ -77,14 +71,13 @@ int main()
     fprintf(fp, "%d %d %d\n", zero, zero, zero);
     
     /* Print out edges (linked list) */
-    for(l=0; l<TOTAL_VERTICES; l++)
+    /*for(l=0; l<TOTAL_VERTICES; l++)
     {
         printf("The %dth linked list :\n", l);
         linked_list[l]->display();
     }
-    
-    printf("Total %d edges.\n", edge_count);
-    //free(vertex);
+    */
+    printf("Total : %d Nodes, %d edges.\n", TOTAL_VERTICES, edge_count);
     fclose(fp);
     return 0;
 }

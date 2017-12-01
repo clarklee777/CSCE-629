@@ -1,0 +1,89 @@
+Finding graph file: graph10kN.txt 
+Graph's Total Edge = 994597
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 9937
+Computing time = 0.934183 second
+
+Finding graph file: graph10kN.txt 
+Graph's Total Edge = 994597
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 9937
+Computing time = 1.213662 second
+
+Finding graph file: graph10kN.txt 
+Graph's Total Edge = 994597
+The source = 0, target = 5000
+The maximal bandwidth path's bandwidth = 9937
+Computing time = 0.397255 second
+Finding graph file: graph2kN.txt 
+Graph's Total Edge = 1006460
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 9975
+Computing time = 0.507202 second
+
+Finding graph file: graph2kN.txt 
+Graph's Total Edge = 1006460
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 9975
+Computing time = 0.509313 second
+
+Finding graph file: graph2kN.txt 
+Graph's Total Edge = 1006460
+The source = 0, target = 1000
+The maximal bandwidth path's bandwidth = 9975
+Computing time = 0.344728 second
+
+Finding graph file: graph4kN.txt 
+Graph's Total Edge = 993301
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 9978
+Computing time = 0.525177 second
+
+Finding graph file: graph4kN.txt 
+Graph's Total Edge = 993301
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 9978
+Computing time = 0.568452 second
+
+Finding graph file: graph4kN.txt 
+Graph's Total Edge = 993301
+The source = 0, target = 2000
+The maximal bandwidth path's bandwidth = 9978
+Computing time = 0.374627 second
+
+Finding graph file: graph6kN.txt 
+Graph's Total Edge = 997142
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 9934
+Computing time = 0.677397 second
+
+Finding graph file: graph6kN.txt 
+Graph's Total Edge = 997142
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 9934
+Computing time = 0.861610 second
+
+Finding graph file: graph6kN.txt 
+Graph's Total Edge = 997142
+The source = 0, target = 3000
+The maximal bandwidth path's bandwidth = 9934
+Computing time = 0.380672 second
+
+Finding graph file: graph8kN.txt 
+Graph's Total Edge = 1017494
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 9949
+Computing time = 0.731319 second
+
+Finding graph file: graph8kN.txt 
+Graph's Total Edge = 1017494
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 9949
+Computing time = 1.015238 second
+
+Finding graph file: graph8KN.txt 
+Graph's Total Edge = 1017494
+The source = 0, target = 4000
+The maximal bandwidth path's bandwidth = 9949
+Computing time = 0.388177 second
+

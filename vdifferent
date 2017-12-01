@@ -1,0 +1,7 @@
+g++ -o noheapdij nonheap_dijkstra.cpp
+g++ -o heapdij heap_dijkstra.cpp
+g++ -o kruskal kruskal.cpp
+
+./noheapdij graph8kN.txt >> 1Me_vdif.txt
+./heapdij graph8kN.txt >> 1Me_vdif.txt
+./kruskal graph8kN.txt >> 1Me_vdif.txt

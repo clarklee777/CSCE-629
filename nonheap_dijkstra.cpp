@@ -127,9 +127,6 @@ void find_path(int _source, int _target)
                 /* Update to fringe, and add to fringe list */
                 status[cur_v] = 2;
                 fringe[cur_v] = min_bw_label;
-
-                //if(labels[u] < temp->weight) labels[cur_v] = labels[u];
-                //else labels[cur_v] = temp->weight;
                 labels[cur_v] = min_bw_label;
 
                 /* Update the parent array */
@@ -207,9 +204,6 @@ int main(int argc, char *argv[])
             }
             else
             {
-                /* Make the edge name XX_YY, XX is the small vertex number while YY is larger */
-                //if(v1<v2) edge = v1*100 + v2;
-                //else edge = v2*100 + v1;
                 if(edge_list[v1] == NULL) edge_list[v1] = new list();
                 if(edge_list[v2] == NULL) edge_list[v2] = new list();
                 edge_list[v1]->newvertex(v2,w);
@@ -221,8 +215,6 @@ int main(int argc, char *argv[])
     //print_linked_list(edge_count);
     
     /* Initialize the graph */
-    //int source = rand()%4999;
-    //int target = rand()%4999;
     int source = 2518;
     int target = 4705;
     

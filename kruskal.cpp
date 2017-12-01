@@ -1,5 +1,5 @@
 /*
-    Kruskal's Maximal Spanning Tree algorithm for max-bandwifth path.
+    Kruskal's Maximum Spanning Tree algorithm for max-bandwidth path.
     Utilizes a max-heap to sort the original graph's edges for max extraction
  
     File:   kruskal.cpp
@@ -13,11 +13,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "linked_list.hpp"
-#include "heap.hpp"
-
-/* Heap functions are :                             */
-/* heap(), extract_max(), update(), Insert(v, w)    */
-/* Delete(vertex), heapify(vertex_bug), heap_size() */
 
 //----------------------------------------------------
 //--------------**** DEFINES ****---------------------
@@ -25,7 +20,9 @@
 
 #define TOTAL_VERTICES 5000
 #define INFINTE 10000
-
+#define TOTAL_SIZE 3000000  //the size should be larger than total edges
+                            //since we need to store all edges in heap first to sort
+#include "heap.hpp"
 //-----------------------------------------------------
 //----------**** DATA STRUCTURES ****------------------
 //-----------------------------------------------------
@@ -156,8 +153,6 @@ void depth_first_search(int v, int parent)
         temp = temp->next;
     }
     status[v] = 2; // color = black (done visit all its child nodes)
-    //edge_list[v] = NULL;
-    //edge_list[parent]->Delete(v);
 }
 
 /* Find the path between source and target in the MxST by using Depth First Search */
@@ -174,7 +169,6 @@ void find_path()
 /* Print out the found max-bandwidth path */
 void print_path()
 {
-    //printf("Printing path...\n");
     bool arrive_source = 0;
     int v = target;
     list * maxpath = new list();
@@ -191,7 +185,6 @@ void print_path()
     int i = 1;
     while(temp!=NULL)
     {
-        //printf("Record finish, printing out...\n");
         if(i%10!=0) printf("%d \t", temp->v_num);
         else printf("%d \n", temp->v_num);
         temp = temp->prev;

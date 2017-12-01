@@ -1,0 +1,180 @@
+Finding graph file: graph0_5M.txt 
+Graph's Total Edge = 499246
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9864
+Computing time = 0.368418 second
+
+Finding graph file: graph0_5M.txt 
+Graph's Total Edge = 499246
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9864
+Computing time = 0.403434 second
+
+Finding graph file: graph0_5M.txt 
+Graph's Total Edge = 499246
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9864
+Computing time = 0.179541 second
+
+Finding graph file: graph1_0M.txt 
+Graph's Total Edge = 1000376
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9961
+Computing time = 0.602369 second
+
+Finding graph file: graph1_0M.txt 
+Graph's Total Edge = 1000376
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9961
+Computing time = 0.665683 second
+
+Finding graph file: graph1_0M.txt 
+Graph's Total Edge = 1000376
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9961
+Computing time = 0.360722 second
+
+Finding graph file: graph1_5M.txt 
+Graph's Total Edge = 1479830
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9939
+Computing time = 0.894410 second
+
+Finding graph file: graph1_5M.txt 
+Graph's Total Edge = 1479830
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9939
+Computing time = 0.853046 second
+
+Finding graph file: graph1_5M.txt 
+Graph's Total Edge = 1479830
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9939
+Computing time = 0.511484 second
+
+Finding graph file: graph2_0M.txt 
+Graph's Total Edge = 1966944
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9978
+Computing time = 1.163997 second
+
+Finding graph file: graph2_0M.txt 
+Graph's Total Edge = 1966944
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9978
+Computing time = 1.254522 second
+
+Finding graph file: graph2_0M.txt 
+Graph's Total Edge = 1966944
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9978
+Computing time = 0.707236 second
+
+Finding graph file: graph2_5M.txt 
+Graph's Total Edge = 2466957
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9986
+Computing time = 1.360624 second
+
+Finding graph file: graph2_5M.txt 
+Graph's Total Edge = 2466957
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9986
+Computing time = 1.467458 second
+
+Finding graph file: graph2_5M.txt 
+Graph's Total Edge = 2466957
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9986
+Computing time = 0.827262 second
+
+Finding graph file: graph3_0M.txt 
+Graph's Total Edge = 2957775
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9966
+Computing time = 1.861061 second
+
+Finding graph file: graph3_0M.txt 
+Graph's Total Edge = 2957775
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9966
+Computing time = 1.860849 second
+
+Finding graph file: graph3_0M.txt 
+Graph's Total Edge = 2957775
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9966
+Computing time = 0.980218 second
+
+Finding graph file: graph3_5M.txt 
+Graph's Total Edge = 3467291
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 1.766239 second
+
+Finding graph file: graph3_5M.txt 
+Graph's Total Edge = 3467291
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 1.851315 second
+
+Finding graph file: graph3_5M.txt 
+Graph's Total Edge = 3467291
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 1.163282 second
+
+Finding graph file: graph4_0M.txt 
+Graph's Total Edge = 4094749
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 2.321401 second
+
+Finding graph file: graph4_0M.txt 
+Graph's Total Edge = 4094749
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9990
+Computing time = 2.400907 second
+
+Finding graph file: graph4_0M.txt 
+Graph's Total Edge = 4094749
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9989
+Computing time = 1.343214 second
+
+Finding graph file: graph4_5M.txt 
+Graph's Total Edge = 4562291
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9988
+Computing time = 2.552364 second
+
+Finding graph file: graph4_5M.txt 
+Graph's Total Edge = 4562291
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9988
+Computing time = 2.474628 second
+
+Finding graph file: graph4_5M.txt 
+Graph's Total Edge = 4562291
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9983
+Computing time = 1.542909 second
+
+Finding graph file: graph5_0M.txt 
+Graph's Total Edge = 5013009
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9980
+Computing time = 2.816910 second
+
+Finding graph file: graph5_0M.txt 
+Graph's Total Edge = 5013009
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9980
+Computing time = 2.671694 second
+
+Finding graph file: graph5_0M.txt 
+Graph's Total Edge = 5013009
+The source = 2518, target = 4705
+The maximal bandwidth path's bandwidth = 9980
+Computing time = 1.634043 second
+

@@ -6,7 +6,9 @@
     Author: Ho Lee
     Date  : 2017/11
 */
-#include "heap.hpp"
+#include "corrected_heap.hpp"
+#include <stdio.h>
+#include <stdlib.h>
 // Heap functions are :
 // heap(), max_weight(), max_vertex, delete_max(), Insert(vertex, weight)
 // Delete(vertex), heapify(vertex_bug), heap_size(), change_size(heap_size)
@@ -16,6 +18,7 @@ int main(int argc, char *argv[])
     FILE *fp;
     fp = fopen(argv[1], "r");
     test_heap = new heap();
+    //int edge_count = 0;
     
     if(!fp)
     {
@@ -45,12 +48,16 @@ int main(int argc, char *argv[])
                 else edge = v2*10000 + v1;
                 test_heap->Insert(edge, w);
                 
+                //edge_count++;
+                //printf("After insert, edge = %d\n", edge_count);
+                
             }
             
         }
      }
-    test_heap->display_heap();
-    /*
+    //printf("HERE !!\n");
+    //test_heap->display_heap();
+    
     while(test_heap->heap_size()!=0)
     {
         EDGE temp = test_heap->extract_max();
@@ -64,7 +71,7 @@ int main(int argc, char *argv[])
         v2 = vertex%10000;
         printf("edge = %d <-> %d, weight = %d\n", v1, v2, weight);
 
-    }*/
+    }
     
     fclose(fp);
     return 0;
